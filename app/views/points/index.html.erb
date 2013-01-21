@@ -1,16 +1,9 @@
-<h1>Listing points</h1>
+<h1>All points</h1>
+
+<div id="map_canvas"></div>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-    <th>Lat</th>
-    <th>Long</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+  
 <% @points.each do |point| %>
   <tr>
     <td><%= point.name %></td>
