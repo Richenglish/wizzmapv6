@@ -3,6 +3,7 @@ class PointsController < ApplicationController
   # GET /points.json
   def index
     @points = Point.all
+    @json = Point.all.to_gmaps4rails
 
     respond_to do |format|
       format.html # index.html.erb

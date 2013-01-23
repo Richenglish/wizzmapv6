@@ -10,8 +10,13 @@
  *
  *= require_self
  *= require_tree .
+  *= require gmaps4rails
  */
+
 
 body{
 	padding-top: 80px;
 }
+
+
+
