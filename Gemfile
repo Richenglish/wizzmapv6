@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'pg'
 gem 'gmaps4rails'
 gem 'devise'
-
+gem 'simple_form'
 
 
 # Gems used only for assets and not required
