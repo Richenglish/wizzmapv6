@@ -8,6 +8,8 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 gem 'pg'
 gem 'gmaps4rails'
+gem 'devise'
+
 
 
 # Gems used only for assets and not required

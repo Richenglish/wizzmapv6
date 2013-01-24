@@ -1,5 +1,8 @@
 WizzmapV6::Application.routes.draw do
+  devise_for :users
+
   resources :points
+  root to: 'points#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

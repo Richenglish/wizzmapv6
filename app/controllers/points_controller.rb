@@ -1,6 +1,8 @@
 class PointsController < ApplicationController
   # GET /points
   # GET /points.json
+ 
+  
   def index
     @points = Point.all
     @json = Point.all.to_gmaps4rails
