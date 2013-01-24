@@ -10,6 +10,14 @@ class User < ActiveRecord::Base
   				  :profile_name	
   # attr_accessible :title, :body
 
+  validates :profile_name, presence: true,
+                           uniqueness: true,
+                           format: {
+                            with: /a-zA-Z0-9_-/,
+                            message: 'Must be formatted correctly.'
+                           }
+    
+
   has_many :points
   
   def total_points
