@@ -12,9 +12,9 @@ WizzmapV6::Application.routes.draw do
 
   resources :points
   get 'feed', to: 'points#index', as: :feed
-
-
   root to: 'points#index'
+
+  get '/:id', to: 'profiles#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,2 +1,16 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="page-header">
+	<h1><%= @user.profile_name %></h1>
+<div>
+
+<br />
+
+<% if @points %>
+	<% @points.each do |point| %>
+	<div class="well">
+		<%= point.name %><br/>
+		<%= point.content %><br/>
+		<%= point.lat %><br/>
+		<%= point.long %><br/>
+	</div>
+	<% end %>
+<% end %>
