@@ -5,6 +5,11 @@ class Point < ActiveRecord::Base
 
   acts_as_gmappable :process_geocoding => false, :lat => "lat", :lng => "long"
 
+  validates :content, presence: true,
+  						length: { minimum: 2 }
+
+  validates :user_id, presence: true
+
 end
 
 

@@ -13,7 +13,8 @@ class PointsControllerTest < ActionController::TestCase
 
   test "should get new" do
     get :new
-    assert_response :success
+    assert_response :redirect
+    assert_redirected_to login_path
   end
 
   test "should create point" do
