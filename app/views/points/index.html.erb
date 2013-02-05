@@ -1,6 +1,9 @@
-<div class="page-header">
-	<h1>All points</h1>
-</div>
+<% if mobile_device? %> <% else %>   <!-- Hidden if Mobile -->
+    <div class="page-header">	
+        <h1>All points</h1>  
+    </div>
+<% end %>
+
 
 <%= gmaps4rails(@json) %>
 <hr/>
