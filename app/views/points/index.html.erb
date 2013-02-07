@@ -8,22 +8,52 @@
 <%= gmaps4rails(@json) %>
 <hr/>
 
-<table>
-  
-<% @points.each do |point| %>
-  <tr>
-    <td><%= point.user.profile_name %></td>
-    <td><%= point.name %></td>
-    <td><%= point.content %></td>
-    <td><%= point.lat %></td>
-    <td><%= point.long %></td>
-    <td><%= link_to 'Show', point %></td>
-    <td><%= link_to 'Edit', edit_point_path(point) %></td>
-    <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% if mobile_device? %> <!-- Mobile Menu -->
+
+    <div class="mobmenu">
+        <div id="action_but">
+            <a href="javascript:toggleDiv('mobmenu2');" class="btn btn-large btn-block btn-primary">Action</a>
+        </div>
+    </div>
+
+    <div class="mobmenu">  
+        <div id="mobmenu2">
+            <%= link_to "Action 2", root_path, class: "btn btn-block btn-large" %>
+            <%= link_to "Action 3", root_path, class: "btn btn-block btn-large" %>
+        </div>
+    </div>
+
+
+
+
+
+
+
+<% else %>  <!-- Desktop menu -->
+
+    <table>
+      
+    <% @points.each do |point| %>
+      <tr>
+        <td><%= point.user.profile_name %></td>
+        <td><%= point.name %></td>
+        <td><%= point.content %></td>
+        <td><%= point.lat %></td>
+        <td><%= point.long %></td>
+        <td><%= link_to 'Show', point %></td>
+        <td><%= link_to 'Edit', edit_point_path(point) %></td>
+        <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
+
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
+
+
+

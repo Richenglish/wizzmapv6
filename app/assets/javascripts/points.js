@@ -4,5 +4,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 */
 
-
+function toggleDiv(divId) {
+   $("#"+divId).toggle();
+}
 
