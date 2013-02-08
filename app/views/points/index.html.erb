@@ -1,18 +1,12 @@
-<% if mobile_device? %> <% else %>   <!-- Hidden if Mobile -->
-    <div class="page-header">	
-        <h1>All points</h1>  
-    </div>
-<% end %>
 
 
-<%= gmaps4rails(@json) %>
-<hr/>
-
-<% if mobile_device? %> <!-- Mobile Menu -->
+<% if mobile_device? %> <!-- Mobile -->
+    
+    <%= gmaps4rails(@json) %>
 
     <div class="menu_mobile">
         <div id="action_but">
-            <a href="javascript:toggleDiv('menu_two');" class="btn btn-block btn-primary">Action</a>
+            <a href="javascript:toggleDiv('menu_two');" class="btn btn-block btn-info">Action</a>
         </div>
     </div>
 
@@ -30,27 +24,40 @@
 
 
 
-<% else %>  <!-- Desktop menu -->
+<% else %>  <!-- Desktop -->
+ 
+    <div class="page-header">   
+        <h1>All points</h1>  
+    </div>
 
-    <table>
-      
-    <% @points.each do |point| %>
-      <tr>
-        <td><%= point.user.profile_name %></td>
-        <td><%= point.name %></td>
-        <td><%= point.content %></td>
-        <td><%= point.lat %></td>
-        <td><%= point.long %></td>
-        <td><%= link_to 'Show', point %></td>
-        <td><%= link_to 'Edit', edit_point_path(point) %></td>
-        <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-    </table>
+<div class="row-fluid">
+    <div class="span8">
+        <%= gmaps4rails(@json) %>
+    </div>
 
-    <br />
+    <div class="span4">
+        <h2>Data Points</h2>
+        <table>
+          
+        <% @points.each do |point| %>
+          <tr>
+            <td><%= point.user.profile_name %></td>
+            <td><%= point.name %></td>
+            <td><%= point.content %></td>
+            <td><%= point.lat %></td>
+            <td><%= point.long %></td>
+            <td><%= link_to 'Show', point %></td>
+            <td><%= link_to 'Edit', edit_point_path(point) %></td>
+            <td><%= link_to 'Destroy', point, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+        </table>
 
-    <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
+        <br />
+
+        <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
+    </div>
+</div>
 
 <% end %>
 

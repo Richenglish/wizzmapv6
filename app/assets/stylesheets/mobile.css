@@ -8,3 +8,15 @@
 #menu_two {
 	display: none;
 }
+
+
+/*  overrides of Bootstrap variables */
+.btn {
+	height: 33px;
+
+}
+
+body {
+
+}     /* body left padding needs to be added but only for desktop */
+
