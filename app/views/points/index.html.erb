@@ -10,16 +10,17 @@
 
 <% if mobile_device? %> <!-- Mobile Menu -->
 
-    <div class="mobmenu">
+    <div class="menu_mobile">
         <div id="action_but">
-            <a href="javascript:toggleDiv('mobmenu2');" class="btn btn-large btn-block btn-primary">Action</a>
+            <a href="javascript:toggleDiv('menu_two');" class="btn btn-block btn-primary">Action</a>
         </div>
     </div>
 
-    <div class="mobmenu">  
-        <div id="mobmenu2">
-            <%= link_to "Action 2", root_path, class: "btn btn-block btn-large" %>
-            <%= link_to "Action 3", root_path, class: "btn btn-block btn-large" %>
+    <div class="menu_mobile">  
+        <div id="menu_two" class="btn-group btn-group-vertical">
+            <%= link_to "Add Location", root_path, class: "btn btn-block" %>
+            <%= link_to "Search", root_path, class: "btn btn-block" %>
+            <a href="javascript:toggleDiv('menu_two');" class="btn btn-block">Clear</a>
         </div>
     </div>
 

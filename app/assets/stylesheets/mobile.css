@@ -1,10 +1,10 @@
-.mobmenu {
+.menu_mobile {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
 }
 
-.menuhide {
+#menu_two {
 	display: none;
 }
