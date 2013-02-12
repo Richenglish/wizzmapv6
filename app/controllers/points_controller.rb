@@ -46,23 +46,28 @@ class PointsController < ApplicationController
   # POST /points
   # POST /points.json
   def create
-    @point = Point.new(params[:point])
+    @point = current_user.points.new(params[:point])
 
     respond_to do |format|
       if @point.save
         format.html { redirect_to @point, notice: 'Point was successfully created.' }
-        format.json { render json: @point, status: :created, location: @point }
+        format.json { render json: @point, point: :created, location: @point }
       else
         format.html { render action: "new" }
-        format.json { render json: @point.errors, status: :unprocessable_entity }
+        format.json { render json: @point.errors, point: :unprocessable_entity }
       end
     end
   end
 
+
   # PUT /points/1
   # PUT /points/1.json
   def update
-    @point = Point.find(params[:id])
+    @point = current_user.points.find(params[:id])
+    
+    if params[:point] && params[:point].has_key?(:user_id)
+      params[:point].delete(user_id)
+    end
 
     respond_to do |format|
       if @point.update_attributes(params[:point])
@@ -70,7 +75,7 @@ class PointsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @point.errors, status: :unprocessable_entity }
+        format.json { render json: @point.errors, point: :unprocessable_entity }
       end
     end
   end
