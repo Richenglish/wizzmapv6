@@ -11,7 +11,11 @@ WizzmapV6::Application.routes.draw do
   end
 
   resources :points
+
   get 'feed', to: 'points#index', as: :feed
+  
+  get 'list', to: 'points#list'
+
   root to: 'points#index'
 
   get '/:id', to: 'profiles#show'

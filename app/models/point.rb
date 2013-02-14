@@ -10,6 +10,13 @@ class Point < ActiveRecord::Base
 
   validates :user_id, presence: true
 
+#testing infowindow
+  def gmaps4rails_infowindow
+      "Hello"
+  end
+
+
+
 end
 
 

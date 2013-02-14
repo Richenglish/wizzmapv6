@@ -1,30 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @point.name %>
-</p>
+<div>
 
-<p>
-  <b>User:</b>
-  <%= @point.user.profile_name %>
-</p>
+<!-- Custom map options for 1 location show -->
+<%= gmaps("map_options" => {  "detect_location" => true, 
+                              "center_on_user" => true, 
+                              "auto_zoom" => false,
+                              "zoom" => 11},
+                              "markers" => { "data" => @json }) %>
 
-<p>
-  <b>Content</b>
-  <%= @point.content %>
-</p>
-
-<p>
-  <b>Lat:</b>
-  <%= @point.lat %>
-</p>
-
-<p>
-  <b>Long:</b>
-  <%= @point.long %>
-</p>
+</div>
 
 
-<%= link_to 'Edit', edit_point_path(@point) %> |
-<%= link_to 'Back', points_path %>
+<div>
+  <p>
+    <b>Name:</b>
+    <%= @point.name %>
+  </p>
+
+  <p>
+    <b>User:</b>
+    <%= @point.user.profile_name %>
+  </p>
+
+  <p>
+    <b>Content</b>
+    <%= @point.content %>
+  </p>
+
+  <p>
+    <b>Lat:</b>
+    <%= @point.lat %>
+  </p>
+
+  <p>
+    <b>Long:</b>
+    <%= @point.long %>
+  </p>
+
+
+  <%= link_to 'Edit', edit_point_path(@point) %> |
+  <%= link_to 'Back', points_path %>
+
+</div>

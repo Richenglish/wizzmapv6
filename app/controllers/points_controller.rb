@@ -16,16 +16,32 @@ class PointsController < ApplicationController
     end
   end
 
+  def list
+    @points = Point.all
+
+    respond_to do |format|
+      format.html # list.html.erb
+      format.json { render json: @points }
+    end
+  end
+
+
+
   # GET /points/1
   # GET /points/1.json
   def show
     @point = Point.find(params[:id])
 
+    @json = @point.to_gmaps4rails
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @point }
+
     end
   end
+
+
 
   # GET /points/new
   # GET /points/new.json
