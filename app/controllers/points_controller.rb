@@ -45,19 +45,8 @@ class PointsController < ApplicationController
 
   # GET /points/new
   # GET /points/new.json
+  # Map Add
   def new
-    @point = Point.new
-
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @point }
-    end
-  end
-
-
-  # Testing map Add
-  def testnew
     @point = Point.new
     @json = @point.to_gmaps4rails
 
