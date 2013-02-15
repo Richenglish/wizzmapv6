@@ -1,22 +1,43 @@
-.menu_mobile {
+#menu_mobile {
+	
+}
+
+.mobmen {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;
 }
 
-#menu_two {
+#menu_action {
+
+}
+
+#menu_main {
 	display: none;
 }
+
+#menu_add {
+	display: none;
+}
+
+#menu_search {
+	display: none;
+}
+
+
 
 
 /*  overrides of Bootstrap variables */
 .btn {
 	height: 33px;
+	font-size: 16px;
+	padding-top: 5px;
 
 }
 
-body {
-
-}     /* body left padding needs to be added but only for desktop */
-
+@media all and (max-width: 600px) {
+ .navbar-inner {
+ 	height: 10px;
+ }
+}

@@ -2,22 +2,46 @@
 
 <% if mobile_device? %> <!-- Mobile -->
     
-    <%= gmaps4rails(@json) %>
+    <!-- Map Call -->
+    <!-- ***** Still need to hide map controls *** -->
+    <%= gmaps("map_options" => {  "detect_location" => true, 
+                              "center_on_user" => true, 
+                              "auto_zoom" => false,
+                              "zoom" => 13},
+                              "markers" => { "data" => @json }) %>
+
+
+    <!-- Menu for Mobile Devices -->
 
     <div class="menu_mobile">
-        <div id="action_but">
-            <a href="javascript:toggleDiv('menu_two');" class="btn btn-block btn-info">Action</a>
-        </div>
-    </div>
 
-    <div class="menu_mobile">  
-        <div id="menu_two" class="btn-group btn-group-vertical">
-            <%= link_to "Add Location", root_path, class: "btn btn-block" %>
-            <%= link_to "Search", root_path, class: "btn btn-block" %>
-            <a href="javascript:toggleDiv('menu_two');" class="btn btn-block">Clear</a>
+        <!-- Action Call -->
+        <div id="menu_action" class="mobmen">
+            <button class="toggle btn btn-block btn-info" id="butt_act" type="button">Action</button>
         </div>
-    </div>
 
+        <!-- Main Menu -->                     <!-- **My Location link needs to point to correct path -->
+        <div id="menu_main" class="mobmen btn-group btn-group-vertical">        
+            <button class="toggle btn btn-block" id="butt_add" type="button">Add Location</button>
+            <button class="toggle btn btn-block" id="butt_search" type="button">Search</button>
+            <%= link_to "My Locations", root_path, class: "btn btn-block" %>
+            <button class="toggle btn btn-block" id="butt_clear" type="button">Clear</button>
+        </div>
+
+        <!-- Add Location -->
+        <div id="menu_add" class="mobmen">
+            Lat [   ] <br />
+            Long [  ] <br />
+            <button class="toggle btn btn-block btn-info" type="button">Add this now</button>
+        </div>
+
+        <!-- Search -->
+        <div id="menu_search" class="mobmen">
+            Search Box [    ]
+            <button class="toggle btn btn-block btn-info" type="button">Search</button>
+        </div>
+
+    </div>
 
 
 
@@ -37,8 +61,6 @@
              - Search Box -
              <h3>Actions</h3>
              Add Location
-             
-            
 
             
         </div>
