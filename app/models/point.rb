@@ -10,7 +10,7 @@ class Point < ActiveRecord::Base
 
   validates :user_id, presence: true
 
-#infowindow
+#infowindow     ******* Need to move this to the controller 
   def gmaps4rails_infowindow
       "<h4>#{self.name}</h4><br />
       #{self.content}"

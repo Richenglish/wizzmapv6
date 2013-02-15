@@ -1,6 +1,6 @@
 class PointsController < ApplicationController
   
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_filter :authenticate_user!, only: [:new, :testnew, :create, :edit, :update]
 
   # GET /points
   # GET /points.json
@@ -48,11 +48,26 @@ class PointsController < ApplicationController
   def new
     @point = Point.new
 
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @point }
     end
   end
+
+
+  # Testing map Add
+  def testnew
+    @point = Point.new
+    @json = @point.to_gmaps4rails
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @point }
+    end
+  end
+
+
 
   # GET /points/1/edit
   def edit

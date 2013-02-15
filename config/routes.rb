@@ -1,6 +1,8 @@
 WizzmapV6::Application.routes.draw do
   get "profiles/show"
 
+  get 'testnew', to: 'points#testnew'  #testing for map add
+
   devise_for :users
 
   devise_scope :user do
