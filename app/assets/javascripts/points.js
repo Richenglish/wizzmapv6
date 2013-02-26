@@ -28,4 +28,13 @@ $(document).ready(function() {
 	
   });
 
+var deskStyle = [ 
+  { "featureType": "road", "stylers": [{ "weight": 1 } ]},
+  { "featureType": "road.highway", "stylers": [{ "saturation": 21 },{ "lightness": 49 }, { "hue": "#ff8800" }]},
+  { "featureType": "road.arterial", "stylers": [{ "lightness": 26 }]},
+  { "featureType": "poi.park", "stylers": [{ "weight": 0.1 }]},
+];
 
+var mobileStyle = [
+
+];
