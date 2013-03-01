@@ -10,7 +10,14 @@ class Point < ActiveRecord::Base
 
   validates :user_id, presence: true
 
-#infowindow     ******* Need to move this to the controller 
+# For Search
+
+  def self.search(search)
+    search_condition = "%" + search + "%"
+    find(:all, :conditions => ['name LIKE ? OR content LIKE ?', search_condition, search_condition])
+  end
+
+# infowindow     ******* Need to move this to the controller 
   def gmaps4rails_infowindow
       "<h4>#{self.name}</h4><br />
       #{self.content}"

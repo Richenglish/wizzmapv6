@@ -18,6 +18,8 @@ WizzmapV6::Application.routes.draw do
   
   get 'list', to: 'points#list'
 
+  get 'search', to: 'points#search'
+
   root to: 'points#index'
 
   get '/:id', to: 'profiles#show'

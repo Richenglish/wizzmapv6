@@ -100,6 +100,12 @@ class PointsController < ApplicationController
     end
   end
 
+  #Search
+  def search
+    @points = Point.search params[:search]
+
+  end
+
   # DELETE /points/1
   # DELETE /points/1.json
   def destroy

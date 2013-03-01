@@ -1,11 +1,4 @@
-<%= simple_form_for(@point) do |f| %>
-  
-
-  <%= f.input :name %>
-  <%= f.input :content %>
-  <%= f.input :lat %>
-  <%= f.input :long %>
-  
-  <%= f.button :submit %>
- 
+<%= form_tag :controller => 'points', :action => 'search', :method => 'get' do %>
+  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+  <%= submit_tag "Search", :name => nil, class: "btn btn-info" %>
 <% end %>

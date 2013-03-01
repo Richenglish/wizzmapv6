@@ -23,6 +23,8 @@
 
 #menu_search {
 	display: none;
+	height: 85px;
+	background-color: white;
 }
 
 
