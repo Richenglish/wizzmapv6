@@ -25,6 +25,11 @@ $(document).ready(function() {
 	     
 	});
 
+	$('#butt_clear2').click(function(){
+	    $('#menu_add').toggle();
+	     
+	});
+
 	
   });
 

@@ -19,6 +19,7 @@
 
 #menu_add {
 	display: none;
+	background-color: white;
 }
 
 #menu_search {
@@ -37,6 +38,8 @@
 	padding-top: 5px;
 
 }
+
+
 
 @media all and (max-width: 600px) {
  .navbar-inner {
