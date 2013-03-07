@@ -16,6 +16,7 @@ class PointsController < ApplicationController
     end
   end
 
+
   def list
     @points = Point.all
 
@@ -63,6 +64,7 @@ class PointsController < ApplicationController
     @point = Point.find(params[:id])
   end
 
+
   # POST /points
   # POST /points.json
   def create
@@ -100,11 +102,16 @@ class PointsController < ApplicationController
     end
   end
 
+
   #Search
   def search
     @points = Point.search params[:search]
 
+
   end
+
+
+
 
   # DELETE /points/1
   # DELETE /points/1.json
