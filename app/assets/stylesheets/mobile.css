@@ -1,6 +1,4 @@
-#menu_mobile {
-	
-}
+
 
 .mobmen {
 	position: absolute;
@@ -9,9 +7,7 @@
 	width: 100%;
 }
 
-#menu_action {
 
-}
 
 #menu_main {
 	display: none;
@@ -38,7 +34,6 @@
 	padding-top: 5px;
 
 }
-
 
 
 @media all and (max-width: 600px) {

@@ -1,4 +1,33 @@
-<h1>Add a Point</h1>
+<% if mobile_device? %>    <!-- Mobile -->
+
+    <h2>New Location</h2>
+    <%= simple_form_for(@point) do |f| %>
+        <% if @point.errors.any? %>
+            <div id="error_explanation">
+            <h2><%= pluralize(@point.errors.count, "error") %> prohibited this point from being saved:</h2>
+
+            <ul>
+                <% @point.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+        </div>
+    <% end %>
+
+    <%= f.input :name %>
+    <%= f.input :content %>
+    <%= f.input :lat %>
+    <%= f.input :long %>
+  
+    <%= f.button :submit %>
+ 
+<% end %>
+
+
+
+<% else %>       <!-- Desktop -->
+
+<h1>New Location</h1>
 
 
 <div class="row-fluid">
@@ -65,4 +94,7 @@
 		
 
 	</script>
+<% end %>
+
+
 <% end %>
