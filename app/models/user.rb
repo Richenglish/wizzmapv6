@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
      
 
   has_many :points
+  has_many :groups
   
   def total_points
   	# not sure???

@@ -1,4 +1,6 @@
 WizzmapV6::Application.routes.draw do
+  get "groups/index"
+
   get "profiles/show"
 
   get 'testnew', to: 'points#testnew'  #testing for map add
