@@ -2,17 +2,28 @@
 	<h1> <%= @user.profile_name %> </h1>
 <div>
 
-<br />	
-<%= gmaps4rails(@json) %>
+<div class="row">
+
+	<div class ="span9">
+		<br />	
+		<%= gmaps4rails(@json) %>
+		<br />
+	</div>
+
+	<div class="span3">
+
+		<% if @points %>
+			<% @points.each do |point| %>
+			<div class="well">
+				<%= point.name %><br/>
+				<%= point.content %><br/>
+				<%= point.lat %><br/>
+				<%= point.long %><br/>
+			</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
 <br />
 
-<% if @points %>
-	<% @points.each do |point| %>
-	<div class="well">
-		<%= point.name %><br/>
-		<%= point.content %><br/>
-		<%= point.lat %><br/>
-		<%= point.long %><br/>
-	</div>
-	<% end %>
-<% end %>
+<%= link_to "Edit Profile", edit_user_registration_path, class: "btn" %>
