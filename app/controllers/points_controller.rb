@@ -1,6 +1,6 @@
 class PointsController < ApplicationController
   
-  before_filter :authenticate_user!, only: [:new, :testnew, :create, :edit, :update]
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
 
   # GET /points
   # GET /points.json

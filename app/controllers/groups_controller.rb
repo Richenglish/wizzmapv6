@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+  
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
+
   def index
   	@groups = Group.all
 
@@ -18,18 +21,15 @@ class GroupsController < ApplicationController
   end
 
   def create
-  	@group = Group.new(params[:group])
+  	@group = current_user.groups.new(params[:group])
 
   	respond_to do |format|
   		if  @group.save
-  			format.html { redirect_to(@group,
-  						  :notice => 'Group was successfuly created.') }
-  			format.json { render :json => @group,
-  						   :user => :created, :location => @group }
+  			format.html { redirect_to @group, notice: 'Group was successfuly created.' }
+  			format.json { render :json => @group, group: :created, location: @group }
   		else
   			format.html { render :action => "new" }
-  			format.json { render :json => @group.errors,
-  						  :user => :unprocessable_entity }
+  			format.json { render :json => @group.errors, group: :unprocessable_entity }
   		end
   	end
   end

@@ -1,4 +1,4 @@
-Show Group Page
+<h1>Show Group Page</h1>
 
 <p id="notice"><%= notice %></p>
  
@@ -10,6 +10,11 @@ Show Group Page
 <p>
   <b>Description:</b>
   <%= @group.group_description %>
+</p>
+
+<p>
+    <b>User:</b>
+    <%= @group.user.profile_name %>
 </p>
   
  
