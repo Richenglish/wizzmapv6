@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
   	@user = User.find_by_profile_name(params[:id])
   	if @user
   		@points = @user.points.all
+      @groups = @user.groups.all
   		
   	# gmaps4rails code
 
