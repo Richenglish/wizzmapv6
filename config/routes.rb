@@ -16,6 +16,8 @@ WizzmapV6::Application.routes.draw do
 
   resources :points
 
+  resources :groups
+
   get 'feed', to: 'points#index', as: :feed
   
   get 'list', to: 'points#list'

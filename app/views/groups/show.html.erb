@@ -1,0 +1,17 @@
+Show Group Page
+
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Group Name:</b>
+  <%= @group.group_name %>
+</p>
+ 
+<p>
+  <b>Description:</b>
+  <%= @group.group_description %>
+</p>
+  
+ 
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

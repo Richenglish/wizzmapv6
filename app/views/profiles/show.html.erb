@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="span3">
-
+		<h3>Points</h3>
 		<% if @points %>
 			<% @points.each do |point| %>
 			<div class="well">
@@ -22,8 +22,16 @@
 			</div>
 			<% end %>
 		<% end %>
+		<h3>Sets</h3>
+		<% if @groups %>
+			Yes
+		<% end %>
+
 	</div>
 </div>
 <br />
-
+<h4>Actions</h4>
+<%= link_to 'New Point', new_point_path, class: "btn btn-success" %> <br />
+<%= link_to 'New Collection', new_group_path, class: "btn btn-success" %>
+<h4>Profile</h4>
 <%= link_to "Edit Profile", edit_user_registration_path, class: "btn" %>
