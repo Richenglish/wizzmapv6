@@ -1,5 +1,5 @@
 class Point < ActiveRecord::Base
-  attr_accessible :content, :lat, :long, :name, :user_id
+  attr_accessible :content, :lat, :long, :name, :user_id, :group_id
 
   belongs_to :user
   belongs_to :group
