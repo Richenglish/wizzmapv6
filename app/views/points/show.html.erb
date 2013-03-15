@@ -38,6 +38,16 @@
     <%= @point.long %>
   </p>
 
+  
+  <p>
+    <b>Group:</b>
+    <% if @point.group %>
+      <%= @point.group.group_name %>
+    <% else %>
+      None
+    <% end %>
+  </p>
+  
 
   <%= link_to 'Edit', edit_point_path(@point) %> |
   <%= link_to 'Back', points_path %>
