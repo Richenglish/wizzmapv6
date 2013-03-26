@@ -1,0 +1,34 @@
+<!-- Partial for Mobile menu -->
+
+<div class="menu_mobile">
+
+        <!-- Action Call -->
+        <div id="menu_action" class="mobmen">
+            <button class="toggle btn btn-block btn-info" id="butt_act" type="button">Action</button>
+        </div>
+
+        <!-- Main Menu -->                     <!-- **My Location link needs to point to correct path -->
+        <div id="menu_main" class="mobmen btn-group btn-group-vertical">        
+            <button class="toggle btn btn-block" id="butt_add" type="button">Add Location</button>
+            <button class="toggle btn btn-block" id="butt_search" type="button">Search</button>
+            <%= link_to "My Locations", root_path, class: "btn btn-block" %>
+            <button class="toggle btn btn-block" id="butt_clear" type="button">Clear</button>
+        </div>
+
+        <!-- Add Location -->
+        <div id="menu_add" class="mobmen">
+            Latitude:<span id="add_lat"></span> <br />
+            Longitude:<span id="add_long"></span> <br />
+            <div>
+                <%= link_to 'Add Location', new_point_path, class: "btn btn-info btn-block" %>
+                <button class="toggle btn btn-block" id="butt_clear2" type="button">Clear</button>
+            </div>
+        </div>
+
+        <!-- Search -->
+        <div id="menu_search" class="mobmen">
+            <%= render 'searchform' %>
+            <button class="toggle btn btn-block" type="button">Clear</button>
+        </div>
+
+    </div>
