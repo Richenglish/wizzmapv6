@@ -1,7 +1,14 @@
+.menu_mobile {
+
+}
+
+.mobile-container {
+	padding-left: 10px;
+}
 
 
 .mobmen {
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
 	left: 0px;
 	width: 100%;

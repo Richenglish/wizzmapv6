@@ -11,10 +11,11 @@
 
 .gmaps4rails_map {
   width: 100%;
-  height: 400px;
+  height: 600px;
 }
 
 /* alt map calls */
-.map_cont2 {
+.gmaps4rails_mobilemap {
   width: 100%;
+  height: 300px;
 }

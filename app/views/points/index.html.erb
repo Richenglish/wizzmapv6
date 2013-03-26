@@ -4,11 +4,13 @@
     
     <!-- Map Call -->
     <!-- ***** Still need to hide map controls *** -->
-    <%= gmaps("map_options" => {  "detect_location" => true, 
+    <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",   
+                              "detect_location" => true, 
                               "center_on_user" => true, 
                               "auto_zoom" => false,
-                              "zoom" => 13},
-                              "markers" => { "data" => @json }) %>
+                              "zoom" => 13,
+                              "class" => "gmaps4rails_mobilemap"},
+                              "markers" => { "data" => @json }) %> <!-- style options are in points.js --> 
 
     <% content_for :scripts do %>
         <script type="text/javascript" charset="utf-8">
@@ -38,12 +40,8 @@
 
 <% else %>  <!-- Desktop -->
 
-<!-- 
-    <div class="page-header">   
-        <h1>All points</h1>  
-    </div>
--->
 <br />
+
     <div class="row-fluid">
         <div class="span8">
             <%= gmaps("map_options" => { :raw => "{styles: deskStyle}", 
@@ -66,7 +64,10 @@
              My Points [BUTTON] <br />
 
              <br />
-             
+             <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
+            <br />
+            <%= link_to 'List of Points for Debug', list_path, class: "btn btn-info" %>
+            <%= link_to 'List of Groups for Debug', groups_path, class: "btn btn-info" %>
 
         
              <div id="dataDisplay">
@@ -79,12 +80,7 @@
             
         </div>
     </div>
-    <br />
-    <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
-    <br /><br />
-    <%= link_to 'List of Points for Debug', list_path, class: "btn btn-info" %>
-    <%= link_to 'List of Groups for Debug', groups_path, class: "btn btn-info" %>
-
+    
 <% end %>
 
 

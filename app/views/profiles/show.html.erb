@@ -1,3 +1,25 @@
+<% if mobile_device? %> <!-- Mobile -->
+<div class="mobile-container">
+	<%= @user.profile_name %>
+	<br />
+	
+	<h5>My Groups</h5>
+		<% if @groups %>
+			<% @groups.each do |group| %>
+				<%= group.group_name %><%= link_to 'Show', group %><br/>
+			<% end %>
+		<% end %>
+
+	<h5>My Points</h5>
+		<% if @points %>
+			<% @points.each do |point| %>
+				<%= point.name %><%= link_to 'Show', point %><br />
+			<% end %>
+		<% end %>
+	
+</div>
+<% else %> <!-- Desktop -->
+
 <div class="page-header">
 	<h1> <%= @user.profile_name %> </h1>
 <div>
@@ -42,3 +64,5 @@
 
 	</div>
 </div>
+
+<% end %>
