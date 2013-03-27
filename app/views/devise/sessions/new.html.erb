@@ -1,25 +1,24 @@
 <!-- Sign In Form -->
 
+<% if mobile_device? %>    <!-- Mobile -->
+
+	<%= render "devise/shared/login" %>
+
+	<%= render "devise/shared/links" %>
+
+
+<% else %>                 <!-- Desktop -->
+<br />	
 <div class="row">
-	<div class="span4">
-		<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: {class: "well"}) do |f| %>
-		  <fieldset>
-		  	<legend>Sign In</legend>
-		  <%= f.input :email %>
-		  <%= f.input :password %>
+	<div class="span4 offset1">
+		<%= render "devise/shared/login" %>
+	</div>
 
-		  <% if devise_mapping.rememberable? -%>
-		    <div><%= f.input :remember_me, as: :boolean %></div>
-		  <% end -%>
-
-		  <div><%= f.button :submit, "Sign in" %></div>
-		  </fieldset>
-		<% end %>
-
+	<div class="span7">
 		<%= render "devise/shared/links" %>
 	</div>
-
-	<div class="span8">
-		<h2> the span of 8 is here</h2>
-	</div>
 </div>
+	
+
+
+<% end %>
