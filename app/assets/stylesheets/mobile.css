@@ -43,8 +43,15 @@
 }
 
 
-@media all and (max-width: 600px) {
+/* Mobile CSS  Sets navbar thinner and transparent */
+
+@media all and (max-width: 600px) { 
  .navbar-inner {
  	height: 10px;
- }
+ 	}
+
 }
+  
+
+
+
