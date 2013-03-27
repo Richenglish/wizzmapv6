@@ -1,55 +1,74 @@
 <p id="notice"><%= notice %></p>
 
+
+<% if mobile_device? %> <!-- Mobile -->
+
+  <div>
+
+  <!-- Custom map options for 1 location show -->
+  <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",
+                                "detect_location" => true, 
+                                "center_on_user" => false, 
+                                "auto_zoom" => false,
+                                "zoom" => 11,
+                                "class" => "gmaps4rails_mobilemap"},
+                                "markers" => { "data" => @json }) %>
+
+  </div>
+
+  <%= render 'mobilemenu' %>
+
+<% else %>        <!-- Desktop -->
+
 <div>
 
-<!-- Custom map options for 1 location show -->
-<%= gmaps("map_options" => {  "detect_location" => true, 
-                              "center_on_user" => true, 
-                              "auto_zoom" => false,
-                              "zoom" => 11},
-                              "markers" => { "data" => @json }) %>
+  <!-- Custom map options for 1 location show -->
+  <%= gmaps("map_options" => {  "detect_location" => true, 
+                                "center_on_user" => false, 
+                                "auto_zoom" => false,
+                                "zoom" => 11},
+                                "markers" => { "data" => @json }) %>
 
-</div>
+  </div>
+  <div>
+    <p>
+      <b>Name:</b>
+      <%= @point.name %>
+    </p>
 
+    <p>
+      <b>User:</b>
+      <%= @point.user.profile_name %>
+    </p>
 
-<div>
-  <p>
-    <b>Name:</b>
-    <%= @point.name %>
-  </p>
+    <p>
+      <b>Content</b>
+      <%= @point.content %>
+    </p>
 
-  <p>
-    <b>User:</b>
-    <%= @point.user.profile_name %>
-  </p>
+    <p>
+      <b>Lat:</b>
+      <%= @point.lat %>
+    </p>
 
-  <p>
-    <b>Content</b>
-    <%= @point.content %>
-  </p>
+    <p>
+      <b>Long:</b>
+      <%= @point.long %>
+    </p>
 
-  <p>
-    <b>Lat:</b>
-    <%= @point.lat %>
-  </p>
+    
+    <p>
+      <b>Group:</b>
+      <% if @point.group %>
+        <%= @point.group.group_name %>
+      <% else %>
+        None
+      <% end %>
+    </p>
+    
 
-  <p>
-    <b>Long:</b>
-    <%= @point.long %>
-  </p>
+    <%= link_to 'Edit', edit_point_path(@point) %> |
+    <%= link_to 'Back', points_path %>
 
-  
-  <p>
-    <b>Group:</b>
-    <% if @point.group %>
-      <%= @point.group.group_name %>
-    <% else %>
-      None
-    <% end %>
-  </p>
-  
-
-  <%= link_to 'Edit', edit_point_path(@point) %> |
-  <%= link_to 'Back', points_path %>
-
-</div>
+  </div>
+<% end %>
