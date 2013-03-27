@@ -37,12 +37,20 @@ class GroupsController < ApplicationController
 
   def show
   	@group = Group.find(params[:id])
+    @points = @group.points.all
 
+    @json = @group.points.all.to_gmaps4rails
   	respond_to do |format|
   		format.html
-  		format.json { render :json => @group}
+  		format.json { render json: @points}
   	end
   end
+
+
+
+
+
+
 
 
   def edit

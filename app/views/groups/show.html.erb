@@ -1,22 +1,20 @@
-<h1>Show Group Page</h1>
+<% if mobile_device? %> <!-- Mobile -->
 
-<p id="notice"><%= notice %></p>
- 
-<p>
-  <b>Group Name:</b>
-  <%= @group.group_name %>
-</p>
- 
-<p>
-  <b>Description:</b>
-  <%= @group.group_description %>
-</p>
+	<p id="notice"><%= notice %></p>
+	<%= @group.group_name %>
 
-<p>
-    <b>User:</b>
-    <%= @group.user.profile_name %>
-</p>
-  
- 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+	 <%= gmaps4rails(@json) %>
+
+
+<% else %>  <!-- Desktop -->
+	<p id="notice"><%= notice %></p>
+
+	<h2><%= @group.group_name %>, <span class="subheading">, by: <%= @group.user.profile_name %></span></h2>
+
+	 
+	 <%= gmaps4rails(@json) %>
+
+	
+
+
+<% end %>

@@ -1,3 +1,6 @@
+<!-- Profile display page -->
+
+
 <% if mobile_device? %> <!-- Mobile -->
 <div class="mobile-container">
 	<%= @user.profile_name %>
@@ -18,6 +21,10 @@
 		<% end %>
 	
 </div>
+
+
+
+
 <% else %> <!-- Desktop -->
 
 <div class="page-header">

@@ -27,6 +27,8 @@ body{
 #map label { width: auto; display:inline; }
 #map img { max-width: none; }
 
-
+.subheading {
+	font-size: 12px;
+}
 
 
