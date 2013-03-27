@@ -31,7 +31,14 @@
 	background-color: white;
 }
 
+#add_long {
+	position: absolute;
+	right: 8px;
+}
 
+#add_lat {
+	padding-left: 8px;
+}
 
 
 /*  overrides of Bootstrap variables */
