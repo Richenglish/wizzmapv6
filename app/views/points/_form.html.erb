@@ -12,11 +12,11 @@
     </div>
   <% end %>
 
-  <%= f.input :name %>
-  <%= f.input :content %>
-  <%= f.input :lat %>
-  <%= f.input :long %>
-  <%= f.association :group %>
+  <%= f.input :name, input_html: { class: 'input-xlarge' } %>
+  <%= f.input :content, input_html: { class: 'input-xlarge' }  %>
+  <%= f.input :lat, disabled: true, input_html: { class: 'input-xlarge' }  %>
+  <%= f.input :long, disabled: true, input_html: { class: 'input-xlarge' }  %>
+  <%= f.association :group, input_html: { class: 'input-xlarge' }  %>
 
  
   <%= f.button :submit, class: "btn btn-info" %>

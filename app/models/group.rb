@@ -3,4 +3,8 @@ class Group < ActiveRecord::Base
 	has_many :points
 
     attr_accessible :group_name, :group_description
+
+    def to_label
+    "#{group_name}"
+  end
 end
