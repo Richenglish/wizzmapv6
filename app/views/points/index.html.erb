@@ -1,9 +1,9 @@
+<!-- Home Page -->
 
-
-<% if mobile_device? %> <!-- Mobile -->
+<% if mobile_device? %>   <!-- Mobile -->
     
     <!-- Map Call -->
-    <!-- ***** Still need to hide map controls *** -->
+
     <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",   
                               "detect_location" => true, 
                               "center_on_user" => true, 
@@ -12,30 +12,7 @@
                               "class" => "gmaps4rails_mobilemap"},
                               "markers" => { "data" => @json }) %> <!-- style options are in points.js --> 
 
-    <% content_for :scripts do %>
-        <script type="text/javascript" charset="utf-8">
-            
-            function centerCall(){
-                var lat = Gmaps.map.map.getCenter().lat();
-                  sessionStorage.setItem("storLat", lat);
-                var lng = Gmaps.map.map.getCenter().lng();
-                  sessionStorage.setItem("storLong", lng);
-                $('#add_lat').html(lat);         
-                $('#add_long').html(lng);
-            };
-
-            Gmaps.map.callback = function() {
-                google.maps.event.addListener(Gmaps.map.serviceObject, 'center_changed', function() {
-                    centerCall();
-                    });
-                
-            };
-                    
-        </script>
-    <% end %>
-    
-    <!-- Menu for Mobile Devices -->
-
+   
     <%= render 'mobilemenu' %>
 
 

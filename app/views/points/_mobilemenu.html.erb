@@ -10,7 +10,7 @@
         <!-- Main Menu -->                     <!-- **My Location link needs to point to correct path -->
         <div id="menu_main" class="mobmen btn-group btn-group-vertical">        
             <button class="toggle btn btn-block" id="butt_add" type="button">Add Location</button>
-            <button class="toggle btn btn-block" id="butt_search" type="button">Search</button>
+            <!-- <button class="toggle btn btn-block" id="butt_search" type="button">Search</button> -->
             <% if user_signed_in? %>
                 <%= link_to "My Locations", current_user.profile_name, class: "btn btn-block" %>
             <% end %>
@@ -27,10 +27,32 @@
             </div>
         </div>
 
-        <!-- Search -->
+        
         <div id="menu_search" class="mobmen">
             <%= render 'searchform' %>
             <button class="toggle btn btn-block" type="button">Clear</button>
-        </div>
+        </div> 
 
     </div>
+
+      <% content_for :scripts do %>
+        <script type="text/javascript" charset="utf-8">
+            
+            function centerCall(){
+                var lat = Gmaps.map.map.getCenter().lat();
+                  sessionStorage.setItem("storLat", lat);
+                var lng = Gmaps.map.map.getCenter().lng();
+                  sessionStorage.setItem("storLong", lng);
+                $('#add_lat').html(lat);         
+                $('#add_long').html(lng);
+            };
+
+            Gmaps.map.callback = function() {
+                google.maps.event.addListener(Gmaps.map.serviceObject, 'center_changed', function() {
+                    centerCall();
+                    });
+                
+            };
+                    
+        </script>
+    <% end %>
