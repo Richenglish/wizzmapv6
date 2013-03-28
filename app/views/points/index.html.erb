@@ -17,8 +17,10 @@
             
             function centerCall(){
                 var lat = Gmaps.map.map.getCenter().lat();
+                  sessionStorage.setItem("storLat", lat);
                 var lng = Gmaps.map.map.getCenter().lng();
-                $('#add_lat').html(lat);
+                  sessionStorage.setItem("storLong", lng);
+                $('#add_lat').html(lat);         
                 $('#add_long').html(lng);
             };
 

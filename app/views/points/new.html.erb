@@ -1,33 +1,29 @@
 <% if mobile_device? %>    <!-- Mobile -->
+<div class="mobile-container">
 
-    <h2>New Location</h2>
-    <%= simple_form_for(@point) do |f| %>
-        <% if @point.errors.any? %>
-            <div id="error_explanation">
-            <h2><%= pluralize(@point.errors.count, "error") %> prohibited this point from being saved:</h2>
+    <%= render 'form' %>
 
-            <ul>
-                <% @point.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-        </div>
+</div>
+
+    <% content_for :scripts do %>
+        <script type="text/javascript" charset="utf-8">
+            
+            function popForm(){
+                var retLat = sessionStorage.getItem("storLat");
+                var retLong = sessionStorage.getItem("storLong");
+                
+                $('#point_lat').val(retLat);
+                $('#point_long').val(retLong);
+                };
+            popForm();
+               
+        </script>
     <% end %>
-
-    <%= f.input :name %>
-    <%= f.input :content %>
-    <%= f.input :lat %>
-    <%= f.input :long %>
-  
-    <%= f.button :submit %>
- 
-<% end %>
-
 
 
 <% else %>       <!-- Desktop -->
 
-<h1>New Location</h1>
+<br />
 
 
 <div class="row-fluid">
@@ -37,7 +33,6 @@
 		</div>
 	</div>
 	<div class="span4">
-		<h4>New test Form </h4>
 		<%= render 'form' %>
 	</div>
 </div>
