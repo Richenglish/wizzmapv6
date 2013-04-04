@@ -34,8 +34,11 @@ body{
 .infobox {
 	border: 1px solid black; 
 	margin-top: 8px; 
-	background: yellow; 
+	background: white; 
 	padding: 5px;
+	height: 200px;
+	bottom: 0px;
+	overflow: auto;
 }
 
 
