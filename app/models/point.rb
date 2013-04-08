@@ -20,10 +20,17 @@ class Point < ActiveRecord::Base
 
 # infowindow     ******* Need to move this to the controller 
   def gmaps4rails_infowindow
-      "<h4>#{self.name}</h4><br />
-      #{self.content} <br /><br />
-      <button class=\"btn btn-info\">Add to Group</button>"
-
+      "<div id=\"info-inside\">
+        <div id=\"info-title\">
+            #{self.name}
+        </div>
+        <div id=\"info-content\">
+            #{self.content}
+        </div>
+        <div id=\"info-menu\">
+            <button class=\"btn btn-info\">Add to Group</button>  
+        </div>
+      </div>"
   end
 
 

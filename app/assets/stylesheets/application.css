@@ -39,10 +39,29 @@ body{
 	border: 1px solid black; 
 	margin-top: 8px; 
 	background: white; 
-	padding: 5px;
-	height: 200px;
+	height: 225px;
 	bottom: 0px;
-	overflow: auto;
 }
+
+#info-inside {
+	padding: 5px;
+}
+
+#info-title {
+	font-size: 2em;
+	font-weight: bold;
+}
+
+#info-content {
+	margin-top: 10px;
+	overflow: scroll;
+	height: 155px;
+}
+
+#info-menu {
+
+}
+
+
 
 
