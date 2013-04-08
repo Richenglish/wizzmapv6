@@ -3,17 +3,44 @@
 	<p id="notice"><%= notice %></p>
 	<%= @group.group_name %>
 
-	 <%= gmaps4rails(@json) %>
+	 <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",  
+	                              "detect_location" => true, 
+                              	  "center_on_user" => false, 
+	                              "auto_zoom" => false,
+	                              "zoom" => 3,
+	                              "class" => "gmaps4rails_mobilemap"},
+	                              "markers" => { "data" => @json,
+                                              "options" => {"custom_infowindow_class" => "infobox"} }) %> <!-- style options in points.js --> 
 
+    <%= render 'points/mobilemenu' %>
 
 <% else %>  <!-- Desktop -->
 	<p id="notice"><%= notice %></p>
+	<br />
+	<div class="row-fluid">
 
-	<h2><%= @group.group_name %>, <span class="subheading">, by: <%= @group.user.profile_name %></span></h2>
+		<div class="span9">
+		 	<%= gmaps4rails(@json) %>
+		</div>
+		<div class="span3">
+			<div class="pointlist-head"><%= @group.group_name %></div>
+			<div class="pointlist-subhead"><em>Author: </em> <%= @group.user.profile_name %> </div>
 
-	 
-	 <%= gmaps4rails(@json) %>
+			<% if @points %>
+				<% @points.each do |point| %>
+					<div class="pointlist-block">
+						<div class="pointlist-title"><%= point.name %></div>
+						<div class="pointlist-content"><%= point.content %></div>
+					</div>
+				
+				<% end %>
+			<% end %>
 
+
+
+			
+		</div>
+	</div>
 	
 
 

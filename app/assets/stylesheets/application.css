@@ -31,9 +31,7 @@ body{
 #map label { width: auto; display:inline; }
 #map img { max-width: none; }
 
-.subheading {
-	font-size: 12px;
-}
+
 
 .infobox {
 	border: 1px solid black; 
@@ -62,6 +60,22 @@ body{
 
 }
 
+.pointlist-head {
+	font-size: 1.50em;
+}
+.pointlist-subhead {
+	
+}
 
+.pointlist-block {
+	margin-top: 10px;
+}
+
+.pointlist-title {
+	font-weight: bold;
+}
+.pointlist-content {
+	 
+}
 
 
