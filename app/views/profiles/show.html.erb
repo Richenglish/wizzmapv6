@@ -1,25 +1,40 @@
 <!-- Profile display page -->
 
+<p id="notice"><%= notice %></p>
+
 
 <% if mobile_device? %> <!-- Mobile -->
 <div class="mobile-container">
-	<%= @user.profile_name %>
-	<br />
+	<div class="pointlist-head"><%= @user.profile_name %></div>
 	
-	<h5>My Groups</h5>
+	<div class="pointlist-subhead">My Groups</div>
+	<div class="mobile-text1">
 		<% if @groups %>
 			<% @groups.each do |group| %>
-				<%= group.group_name %><%= link_to 'Show', group %><br/>
+				<%= link_to group.group_name, group %><br/>
 			<% end %>
 		<% end %>
+	</div>
+	<br /><br />
 
-	<h5>My Points</h5>
+	<div class="pointlist-subhead">My Points</div>
+	<div class="mobile-text1">
 		<% if @points %>
 			<% @points.each do |point| %>
-				<%= point.name %><%= link_to 'Show', point %><br />
+				<%= link_to point.name, point %><br />
 			<% end %>
 		<% end %>
-	
+	</div>
+
+	<br /><br />
+
+	<div class="pointlist-subhead">Profile Actions</div>
+	<div class="mobile-text1">
+	<%= link_to "Edit Profile", edit_user_registration_path %><br />
+	<%= link_to 'New Point', new_point_path %> <br />
+	<%= link_to 'New Collection', new_group_path %>
+	</div>
+
 </div>
 
 
@@ -27,26 +42,25 @@
 
 <% else %> <!-- Desktop -->
 
-<div class="page-header">
-	<h1> <%= @user.profile_name %> </h1>
-<div>
+<br />
 
-<div class="row">
+<div class="row-fluid">
 
 	<div class ="span9">
-		<br />	
+		
 		<%= gmaps4rails(@json) %>
-		<br />
+			
+	</div>
+
+	<div class="span3">
+
+		<div class="pointlist-head"><%= @user.profile_name %></div>
 
 		<h4>Actions</h4>
 		<%= link_to 'New Point', new_point_path, class: "btn btn-success" %> <br />
 		<%= link_to 'New Collection', new_group_path, class: "btn btn-success" %>
 		<h4>Profile</h4>
 		<%= link_to "Edit Profile", edit_user_registration_path, class: "btn" %>
-	</div>
-
-	<div class="span3">
-
 		<h3>Points</h3>
 		<% if @points %>
 			<% @points.each do |point| %>

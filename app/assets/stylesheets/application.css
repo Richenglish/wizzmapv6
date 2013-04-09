@@ -62,8 +62,11 @@ body{
 
 .pointlist-head {
 	font-size: 1.50em;
+	padding-bottom: 12px;
 }
 .pointlist-subhead {
+	font-size: 1.25em;
+	padding-bottom: 8px;
 	
 }
 
