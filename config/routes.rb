@@ -3,8 +3,6 @@ WizzmapV6::Application.routes.draw do
 
   get "profiles/show"
 
-  get 'testnew', to: 'points#testnew'  #testing for map add
-
   devise_for :users
 
   devise_scope :user do
@@ -26,7 +24,8 @@ WizzmapV6::Application.routes.draw do
 
   root to: 'points#index'
 
-  get '/:id', to: 'profiles#show'
+  #get '/:id', to: 'profiles#show'  #(Older verion)
+  get '/:id', to: 'profiles#show', as: :id 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

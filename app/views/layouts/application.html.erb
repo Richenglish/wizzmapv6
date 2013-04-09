@@ -30,7 +30,7 @@
 
 	    <ul class="nav pull-right"> 
 	    	<% if user_signed_in? %>
-	    		<li><%= link_to current_user.profile_name, current_user.profile_name %></li>
+	    		<li><%= link_to current_user.profile_name, id_path(current_user.profile_name) %></li>
 	    		<li><%= link_to "Log Out", logout_path %></li>
 	    	<% else %>
 	    		<li><%= link_to "Log In", login_path %></li>
