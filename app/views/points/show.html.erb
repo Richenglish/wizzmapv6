@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-
+<!-- One Location Show -->
 
 <% if mobile_device? %> <!-- Mobile -->
 
-  <div>
+
 
   <!-- Custom map options for 1 location show -->
   <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",
@@ -14,7 +13,7 @@
                                 "class" => "gmaps4rails_mobilemap"},
                                 "markers" => { "data" => @json }) %>
 
-  </div>
+  
 
   <%= render 'mobilemenu' %>
 
