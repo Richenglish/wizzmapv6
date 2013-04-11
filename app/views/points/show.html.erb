@@ -1,86 +1,61 @@
+<!-- Point - Show -->
 <!-- One Location Show -->
 
 <% if mobile_device? %> <!-- Mobile -->
-
-
 
   <!-- Custom map options for 1 location show -->
   <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",
                                 "detect_location" => true, 
                                 "center_on_user" => false, 
                                 "auto_zoom" => false,
-                                "zoom" => 11,
+                                "zoom" => 13,
                                 "class" => "gmaps4rails_mobilemap"},
-                                "markers" => { "data" => @json }) %>
+                                "markers" => { "data" => @json,
+                                                "options" => {"custom_infowindow_class" => "infobox"} }) %>
 
   
-
   <%= render 'mobilemenu' %>
 
 
-
-
-
 <% else %>        <!-- Desktop -->
+
 <p id="notice"><%= notice %></p>
 <br />
   <div class="row-fluid">
     <div class="span9">
 
     <!-- Custom map options for 1 location show -->
-    <%= gmaps("map_options" => {  "detect_location" => true, 
+    <%= gmaps("map_options" => {  :raw => "{styles: deskStyle}",
+                                  "detect_location" => true, 
                                   "center_on_user" => false, 
                                   "auto_zoom" => false,
-                                  "zoom" => 11},
-                                  "markers" => { "data" => @json }) %>
+                                  "zoom" => 12},
+                                  "markers" => { "data" => @json,
+                                                  "options" => {"custom_infowindow_class" => "infobox"} }) %>  
 
     </div>
 
     <div class="span3">
-      <p>
-        <b>Name:</b>
-        <%= @point.name %>
-      </p>
+      <div class="pointlist-head"><%= @point.name %></div>
+      <div class="pointlist-subhead"><em>Author: </em> <%= @point.user.profile_name %> </div>
+      <br />
+      <div class="pointlist-content"><%= @point.content %></div> 
 
-      <p>
-        <b>User:</b>
-        <%= @point.user.profile_name %>
-      </p>
-
-      <p>
-        <b>Content</b>
-        <%= @point.content %>
-      </p>
-
-      <p>
-        <b>Lat:</b>
-        <%= @point.lat %>
-      </p>
-
-      <p>
-        <b>Long:</b>
-        <%= @point.long %>
-      </p>
-
-      
-      <p>
-        <b>Group:</b>
+     <br /><br />
+     <div class="pointlist-subhead">Belongs to these Groups:</div>
         <% if @groups %>
           <% @groups.each do |group| %>
-          <div class="pointlist-block">
-            <div class="pointlist-title"><%= group.group_name %></div>
-            <div class="pointlist-content"><%= group.group_description %></div>
-          </div>
+            <li><%= link_to group.group_name, group %></li><br />
           <% end %>
 
         <% else %>
-          Test No
+          No Groups
         <% end %>
-      </p>
-      
+        <br />
+        <%= link_to ' Edit ', edit_point_path(@point), class: "btn btn-info" %> 
 
-      <%= link_to 'Edit', edit_point_path(@point) %> |
-      <%= link_to 'Back', points_path %>
+      
+    
     </div>
   </div>
 <% end %>

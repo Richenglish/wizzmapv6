@@ -1,3 +1,6 @@
+<!-- Group - Show -->
+<!-- One Group Show -->
+
 <% if mobile_device? %> <!-- Mobile -->
 
 	<p id="notice"><%= notice %></p>
@@ -10,7 +13,7 @@
 	                              "zoom" => 3,
 	                              "class" => "gmaps4rails_mobilemap"},
 	                              "markers" => { "data" => @json,
-                                              "options" => {"custom_infowindow_class" => "infobox"} }) %> <!-- style options in points.js --> 
+                                              "options" => {"custom_infowindow_class" => "infobox"} }) %>  
 
     <%= render 'points/mobilemenu' %>
 
@@ -18,24 +21,36 @@
 <% else %>  <!-- Desktop -->
 	<p id="notice"><%= notice %></p>
 	<br />
-	<div class="row-fluid">
 
+	<div class="row-fluid">
 		<div class="span9">
-		 	<%= gmaps4rails(@json) %>
+		 	<%= gmaps("map_options" => {  :raw => "{styles: deskStyle}",
+                                  "detect_location" => true, 
+                                  "center_on_user" => false, 
+                                  "auto_zoom" => false},
+                                  "markers" => { "data" => @json,
+                                                  "options" => {"custom_infowindow_class" => "infobox"} }) %>  
+
 		</div>
 		<div class="span3">
 			<div class="pointlist-head"><%= @group.group_name %></div>
 			<div class="pointlist-subhead"><em>Author: </em> <%= @group.user.profile_name %> </div>
-
+			<div class="pointlist-content"><%= @group.group_description %></div>
+			<br />
+			<br />
+			<div class="pointlist-subhead">Points </div>
 			<% if @points %>
 				<% @points.each do |point| %>
 					<div class="pointlist-block">
-						<div class="pointlist-title"><%= point.name %></div>
+						<div class="pointlist-title"><%= link_to point.name, point %></div>
 						<div class="pointlist-content"><%= point.content %></div>
 					</div>
 				
 				<% end %>
 			<% end %>
+
+			<br />
+        	<%= link_to ' Edit ', edit_group_path(@group), class: "btn btn-info" %> 
 
 
 

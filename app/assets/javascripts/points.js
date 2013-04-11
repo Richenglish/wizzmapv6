@@ -33,15 +33,62 @@ $(document).ready(function() {
 	
   });
 
-var deskStyle = [ 
+var deskStyle = [
+  {
+    "featureType": "road",
+    "stylers": [
+      { "hue": "0044ff" },
+      { "saturation": -70 }
+    ]
+  },{
+    "featureType": "road.highway",
+    "stylers": [
+      { "weight": 0.3 },
+      { "lightness": 20 }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "stylers": [
+      { "weight": 0.4 },
+      { "lightness": 20 }
+    ]
+  },{
+    "featureType": "road.local",
+    "stylers": [
+      { "weight": 0.5 },
+      { "lightness": -18 }
+    ]
+  },{
+    "featureType": "landscape",
+    "stylers": [
+      { "lightness": 61 }
+    ]
+  },{
+    "featureType": "water",
+    "stylers": [
+      { "hue": "#004cff" },
+      { "lightness": 19 },
+      { "saturation": 77 }
+    ]
+  },{
+    "featureType": "poi.park",
+    "stylers": [
+      { "lightness": -17 }
+    ]
+  },{
+  }
+]
+
+
+
+
+var OLDdeskStyle = [ 
   { "featureType": "road", "stylers": [{ "weight": 1 } ]},
   { "featureType": "road.highway", "stylers": [{ "saturation": 21 },{ "lightness": 49 }, { "hue": "#ff8800" }]},
   { "featureType": "road.arterial", "stylers": [{ "lightness": 26 }]},
   { "featureType": "poi.park", "stylers": [{ "weight": 0.1 }]},
 ];
 
-var mobileStyle = [
 
-];
 
 
