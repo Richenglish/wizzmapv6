@@ -32,6 +32,7 @@ class PointsController < ApplicationController
   # GET /points/1.json
   def show
     @point = Point.find(params[:id])
+    @groups = @point.groups.all
 
     @json = @point.to_gmaps4rails
 

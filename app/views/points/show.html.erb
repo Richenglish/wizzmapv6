@@ -65,10 +65,16 @@
       
       <p>
         <b>Group:</b>
-        <% if @point.group %>
-          <%= @point.group.group_name %>
+        <% if @groups %>
+          <% @groups.each do |group| %>
+          <div class="pointlist-block">
+            <div class="pointlist-title"><%= group.group_name %></div>
+            <div class="pointlist-content"><%= group.group_description %></div>
+          </div>
+          <% end %>
+
         <% else %>
-          None
+          Test No
         <% end %>
       </p>
       

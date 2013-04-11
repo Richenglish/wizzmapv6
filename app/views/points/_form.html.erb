@@ -16,7 +16,7 @@
   <%= f.input :content, input_html: { class: 'input-xlarge' }  %>
   <%= f.input :lat, input_html: { class: 'input-xlarge' }  %>
   <%= f.input :long, input_html: { class: 'input-xlarge' }  %>
-  <%= f.association :group, input_html: { class: 'input-xlarge' }  %>
+  <%= f.association :groups, as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
 
  
   <%= f.button :submit, class: "btn btn-info" %>

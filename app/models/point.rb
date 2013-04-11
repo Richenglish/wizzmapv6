@@ -1,8 +1,8 @@
 class Point < ActiveRecord::Base
-  attr_accessible :content, :lat, :long, :name, :user_id, :group_id
+  attr_accessible :content, :lat, :long, :name, :user_id, :group_ids
 
   belongs_to :user
-  belongs_to :group
+  has_and_belongs_to_many :groups
 
   acts_as_gmappable :process_geocoding => false, :lat => "lat", :lng => "long"
 
@@ -28,7 +28,7 @@ class Point < ActiveRecord::Base
             #{self.content}
         </div>
         <div id=\"info-menu\">
-            <button class=\"btn btn-info\">Add to Group</button>  
+            <button class=\"btn btn-info\">Add to Group</button>  <button class=\"btn btn-info\">Edit</button> 
         </div>
       </div>"
   end
