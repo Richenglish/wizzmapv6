@@ -22,7 +22,10 @@ body{
 	height: 100%;
 }
 
-
+.pullright {
+	position: fixed;
+	right: 10px;
+}
 
 .alert {
 	margin-top: 10px;

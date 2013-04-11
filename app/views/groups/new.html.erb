@@ -1,3 +1,20 @@
-<h1>New Collection / Group</h1>
+<!-- New Group creation -->
 
-<%= render 'groupform' %>
+<% if mobile_device? %>    <!-- Mobile -->
+	<div class="mobile-container">
+		<%= render 'groupform' %>
+	</div>
+
+
+
+<% else %> <!-- Desktop -->
+<br />
+<div class="row-fluid">
+	<div class="span11 offset1">
+		<%= render 'groupform' %>
+	</div>
+
+</div>
+
+<% end %>
+
