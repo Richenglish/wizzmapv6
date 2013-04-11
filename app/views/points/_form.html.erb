@@ -13,9 +13,11 @@
   <% end %>
 
   <%= f.input :name, input_html: { class: 'input-xlarge' } %>
-  <%= f.input :content, input_html: { class: 'input-xlarge' }  %>
+  <%= f.text_area :content, :rows => "15" %>
+  <div class="hide">
   <%= f.input :lat, input_html: { class: 'input-xlarge' }  %>
   <%= f.input :long, input_html: { class: 'input-xlarge' }  %>
+  </div>
   <%= f.association :groups, as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
 
  
