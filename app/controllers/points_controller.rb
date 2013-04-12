@@ -34,6 +34,8 @@ class PointsController < ApplicationController
     @point = Point.find(params[:id])
     @groups = @point.groups.all
 
+    @menu_point = true
+
     @json = @point.to_gmaps4rails
 
     respond_to do |format|

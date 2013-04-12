@@ -7,17 +7,39 @@
             <button class="toggle btn btn-block btn-info" id="butt_act" type="button">Action</button>
         </div>
 
-        <!-- Main Menu show? -->                     <!-- **My Location link needs to point to correct path -->
-        <div id="menu_main" class="mobmen btn-group btn-group-vertical">        
-            <button class="toggle btn btn-block" id="butt_add" type="button">Add Location</button>
+        <!-- Main Menu show? -->                  
+        <div id="menu_main" class="mobmen btn-group btn-group-vertical"> 
+
+
+<!--  Edit or Add to Group -->
+            <% if @menu_point && user_signed_in? %>
+                <% if current_user.id == @point.user_id  %>
+                    <%= link_to "Edit this Location", edit_point_path(@point), class: "btn btn-block" %>
+                <% else %>
+                    <%= link_to "Add This to a Group", root_path, class: "btn btn-block" %>
+                <% end %>
+            <% end %>
+
+
+ <!--  Add -->           
+            <button class="toggle btn btn-block" id="butt_add" type="button">Create a New Location</button>
+
+
+<!--  Search -->
             <!-- <button class="toggle btn btn-block" id="butt_search" type="button">Search</button> -->
+
+            
+<!-- My Locations -->
             <% if user_signed_in? %>
                 <%= link_to "My Locations", id_path(current_user.profile_name), class: "btn btn-block" %>
             <% end %>
-            <button class="toggle btn btn-block" id="butt_clear" type="button">Clear</button>
+
+            <button class="toggle btn btn-block" id="butt_clear" type="button">Collapse</button>
         </div>
 
-        <!-- Add Location -->
+
+<!-- sub Menu -->
+<!-- Add Location -->
         <div id="menu_add" class="mobmen">
             <span id="add_lat"></span>
             <span id="add_long"></span> 
@@ -27,7 +49,8 @@
             </div>
         </div>
 
-        
+<!-- sub Menu -->
+<!-- Search (currrently disabled)   -->        
         <div id="menu_search" class="mobmen">
             <%= render 'points/searchform' %>
             <button class="toggle btn btn-block" type="button">Clear</button>
