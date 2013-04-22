@@ -12,13 +12,15 @@
     </div>
   <% end %>
 
-  <%= f.input :name, input_html: { class: 'input-xlarge' } %>
+  <%= f.input :name, input_html: { class: 'input-large' } %>
   <%= f.text_area :content, :rows => "15" %>
   <div class="hide">
   <%= f.input :lat, input_html: { class: 'input-xlarge' }  %>
   <%= f.input :long, input_html: { class: 'input-xlarge' }  %>
   </div>
-  <%= f.association :groups, as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
+  <%= f.association :groups, 
+                    collection: current_user.groups,
+                    as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
 
  
   <%= f.button :submit, class: "btn btn-info" %>

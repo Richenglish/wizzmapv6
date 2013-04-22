@@ -19,6 +19,7 @@ class PointsController < ApplicationController
 
   def list
     @points = Point.all
+    
 
     respond_to do |format|
       format.html # list.html.erb
