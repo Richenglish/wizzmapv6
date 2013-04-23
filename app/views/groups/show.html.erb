@@ -4,8 +4,9 @@
 <% if mobile_device? %> <!-- Mobile -->
 
 	<p id="notice"><%= notice %></p>
+	<div>
 	<%= @group.group_name %>
-
+	</div>
 	 <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",  
 	                              "detect_location" => true, 
                               	  "center_on_user" => false, 
@@ -58,6 +59,6 @@
 		</div>
 	</div>
 	
-
+	<%= render 'points/infoboxscript' %>
 
 <% end %>

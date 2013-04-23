@@ -18,23 +18,7 @@ class Point < ActiveRecord::Base
     find(:all, :conditions => ['name LIKE ? OR content LIKE ?', search_condition, search_condition])
   end
 
-# infowindow     ******* Need to move this to the controller 
-  def gmaps4rails_infowindow
 
-
-      "<div id=\"info-inside\">
-        <div id=\"info-title\">
-            #{self.name}
-        </div>
-        <div id=\"info-content\">
-            #{self.content}
-        </div>
-
-        <div id=\"info-menu\">
-            <button class=\"btn btn-info\">Add or Edit</button> 
-        </div>
-      </div>"
-  end
 
 
 

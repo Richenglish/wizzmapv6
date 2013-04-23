@@ -8,13 +8,25 @@ class PointsController < ApplicationController
   
   def index
     @points = Point.all
-    @json = Point.all.to_gmaps4rails
+    @json = Point.all.to_gmaps4rails do |point, marker|
+      marker.infowindow render_to_string(:partial => "/points/infowindow", :locals => { :point => point})
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @points }
     end
   end
+
+  #def index
+  #  @points = Point.all
+  #  @json = Point.all.to_gmaps4rails
+#
+#    respond_to do |format|
+#      format.html # index.html.erb
+#      format.json { render json: @points }
+#    end
+#  end
 
 
   def list

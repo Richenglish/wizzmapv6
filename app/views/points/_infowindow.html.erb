@@ -1,2 +1,15 @@
-<h1><%= point.name %></h1>
-<h2>Description: <%= point.content %></h2>
+<!-- Info Window Partial -->
+
+<div id="info-inside">
+    <div id="info-title">
+        <%= point.name %>
+    </div>
+    <div id="info-content">
+       <%= point.content %>
+    </div>
+
+    <div id="info-menu">
+    	<%= link_to ' Edit ', edit_point_path(point), class: "btn btn-info" %>
+    </div>
+
+</div>
