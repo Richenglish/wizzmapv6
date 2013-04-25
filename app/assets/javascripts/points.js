@@ -43,19 +43,19 @@ var deskStyle = [
   },{
     "featureType": "road.highway",
     "stylers": [
-      { "weight": 0.3 },
+      { "weight": 0.4 },
       { "lightness": 20 }
     ]
   },{
     "featureType": "road.arterial",
     "stylers": [
-      { "weight": 0.4 },
+      { "weight": 0.8 },
       { "lightness": 20 }
     ]
   },{
     "featureType": "road.local",
     "stylers": [
-      { "weight": 0.5 },
+      { "weight": 1.6 },
       { "lightness": -18 }
     ]
   },{
@@ -66,28 +66,20 @@ var deskStyle = [
   },{
     "featureType": "water",
     "stylers": [
-      { "hue": "#004cff" },
-      { "lightness": 19 },
-      { "saturation": 77 }
+      { "hue": "#00b2ff" },
+      { "lightness": 25 },
+      { "saturation": -43 }
     ]
   },{
     "featureType": "poi.park",
     "stylers": [
-      { "lightness": -17 }
+      { "lightness": -25 }
     ]
   },{
   }
 ]
 
 
-
-
-var OLDdeskStyle = [ 
-  { "featureType": "road", "stylers": [{ "weight": 1 } ]},
-  { "featureType": "road.highway", "stylers": [{ "saturation": 21 },{ "lightness": 49 }, { "hue": "#ff8800" }]},
-  { "featureType": "road.arterial", "stylers": [{ "lightness": 26 }]},
-  { "featureType": "poi.park", "stylers": [{ "weight": 0.1 }]},
-];
 
 
 
