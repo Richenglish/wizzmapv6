@@ -9,6 +9,19 @@
 }
 
 
+.map-label {
+	position: fixed;
+	top: 75px;
+	right: 10px;
+	z-index: 10;
+	font-size: 16px;
+	color: #173D45;
+	opacity: .6;
+	background-color: white;
+
+
+}
+
 .mobmen {
 	position: fixed;
 	bottom: 0px;

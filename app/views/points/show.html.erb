@@ -2,7 +2,10 @@
 <!-- One Location Show -->
 
 <% if mobile_device? %> <!-- Mobile -->
-
+  <div class="map-label">
+  <%= @point.name %>
+  </div>
+  
   <!-- Custom map options for 1 location show -->
   <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",
                                 "detect_location" => true, 

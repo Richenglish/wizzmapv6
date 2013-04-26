@@ -3,8 +3,7 @@
 
 <% if mobile_device? %> <!-- Mobile -->
 
-	<p id="notice"><%= notice %></p>
-	<div>
+	<div class="map-label">
 	<%= @group.group_name %>
 	</div>
 	 <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",  
