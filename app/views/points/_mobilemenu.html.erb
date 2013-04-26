@@ -36,7 +36,7 @@
             
 <!-- My Locations -->
             <% if user_signed_in? %>
-                <%= link_to "My Locations", id_path(current_user.profile_name), class: "btn btn-block" %>
+                <%= link_to "My Locations and Profile", id_path(current_user.profile_name), class: "btn btn-block" %>
             <% end %>
 
             <button class="toggle btn btn-block" id="butt_clear" type="button">Collapse</button>

@@ -56,12 +56,19 @@
 }
 
 
+
 /*  overrides of Bootstrap variables */
 
-.fixbut {
+.fixbut {							/* New class used in conjunction */
 	width: 90px !important;
 
 }
+
+.btn-block {						/* Overide */
+	height: 36px !important;
+}
+
+
 
 
 
