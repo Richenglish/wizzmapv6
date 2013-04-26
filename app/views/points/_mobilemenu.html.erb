@@ -4,7 +4,7 @@
 
         <!-- Action Call -->
         <div id="menu_action" class="mobmen">
-            <button class="toggle btn btn-block btn-info" id="butt_act" type="button">Action</button>
+            <button class="toggle btn btn-block btn-info" id="butt_act" type="button">Actions</button>
         </div>
 
         <!-- Main Menu show? -->                  
@@ -12,11 +12,16 @@
 
 
 <!--  Edit or Add to Group -->
-            <% if @menu_point && user_signed_in? %>
-                <% if current_user.id == @point.user_id  %>
-                    <%= link_to "Edit this Location", edit_point_path(@point), class: "btn btn-block" %>
-                <% else %>
-                    <%= link_to "Add This to a Group", root_path, class: "btn btn-block" %>
+            <% if user_signed_in? %>
+                <% if @menu_point %>
+                    <% if current_user.id == @point.user_id  %>
+                        <%= link_to "Edit this Location", edit_point_path(@point), class: "btn btn-block" %>
+                    <% else %>
+                        <%= link_to "Add This to a Group", root_path, class: "btn btn-block" %>
+                    <% end %>
+                <% end %>
+                <% if @menu_group && current_user.id == @group.user_id %>
+                    <%= link_to "Edit this Group", edit_group_path(@group), class: "btn btn-block" %>
                 <% end %>
             <% end %>
 

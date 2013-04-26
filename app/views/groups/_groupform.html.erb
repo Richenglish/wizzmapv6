@@ -1,10 +1,9 @@
-<h4>Create New Group</h4>
-<br />
+<!-- Group form -->
+
 <%= simple_form_for(@group) do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@group.errors.count, "error") %> prohibited this Group from being saved:</h2>
-
       <ul>
       <% @group.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -14,8 +13,8 @@
   <% end %>
 
   <%= f.input :group_name %>
-  <%= f.input :group_description %>
+  <%= f.input :group_description, as: :text%>
  
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn btn-info" %>
 
 <% end %>

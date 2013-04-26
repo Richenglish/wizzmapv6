@@ -1,6 +1,37 @@
-<h1> Edit </h1>
+<!-- Edit Group -->
 
-<%= render 'groupform' %>
+
+
+<% if mobile_device? %>    <!-- Mobile -->
+
+	<div class="mobile-container">
+		<h3> Edit Group </h3>
+		<%= render 'groupform' %>
+	</div>
+
+
+
+<% else %> <!-- Desktop -->
+
+
+	<br />
+	<div class="row-fluid">
+		<div class="span11 offset1">
+			<h3>Edit Group</h3>
+			<%= render 'groupform' %>
+
+			<%= link_to 'Show', @group %> |
+			<%= link_to 'Back', groups_path %>
+		</div>
+
+	</div>
+
+
+<% end %>
+
+
+
+
+
+
  
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>

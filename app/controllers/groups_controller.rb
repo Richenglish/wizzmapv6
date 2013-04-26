@@ -40,6 +40,8 @@ class GroupsController < ApplicationController
   	@group = Group.find(params[:id])
     @points = @group.points.all
 
+    @menu_group = true
+
     @json = @group.points.all.to_gmaps4rails
   	respond_to do |format|
   		format.html
@@ -50,6 +52,26 @@ class GroupsController < ApplicationController
   def edit
   	@group = Group.find(params[:id])
   end
+
+  def update
+    @group = current_user.groups.find(params[:id])
+    
+    if params[:group] && params[:group].has_key?(:user_id)
+      params[:group].delete(user_id)
+    end
+
+    respond_to do |format|
+      if @group.update_attributes(params[:group])
+        format.html { redirect_to @group, notice: 'Point was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @group.errors, point: :unprocessable_entity }
+      end
+    end
+  end
+
+
 
   def destroy
   	@group = Group.find(params[:id])
