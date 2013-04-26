@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_filter :authorize, only: [:edit, :update]
 
   def index
   	@groups = Group.all
@@ -46,13 +47,6 @@ class GroupsController < ApplicationController
   	end
   end
 
-
-
-
-
-
-
-
   def edit
   	@group = Group.find(params[:id])
   end
@@ -66,6 +60,19 @@ class GroupsController < ApplicationController
       format.json { head :no_content}
     end
   end
+
+  private
+  def authorize()
+
+      s = Group.find(params[:id])
+
+      if current_user.id == s.user.id
+        
+      else
+          flash[:error] = "You must be owner to edit"
+          redirect_to(:back)
+      end
+     end
 
 
 end

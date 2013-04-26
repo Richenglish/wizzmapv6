@@ -56,13 +56,13 @@
 }
 
 
-/*  overrides of Bootstrap variables 
-.btn {
-	height: 33px;
-	font-size: 16px;
-	padding-top: 5px;
+/*  overrides of Bootstrap variables */
 
-} */
+.fixbut {
+	width: 90px !important;
+
+}
+
 
 
 /* Mobile CSS  Sets navbar thinner  */

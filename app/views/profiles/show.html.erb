@@ -9,7 +9,7 @@
 	<div class="pointlist-head"><%= @user.profile_name %></div>
 	
 	<span class="pointlist-subhead">My Groups</span> 
-	<span class="pullright"><%= link_to 'New Collection', new_group_path, class: "btn btn-info btn-small" %></span>
+	<span class="pullright"><%= link_to 'New Collection', new_group_path, class: "btn btn-info btn-small fixbut" %></span>
 	<div class="mobile-text1">
 		<% if @groups %>
 			<% @groups.each do |group| %>
@@ -20,7 +20,7 @@
 	<br /><br />
 
 	<span class="pointlist-subhead">My Points</span>
-	<span class="pullright"><%= link_to 'New Point', root_path, class: "btn btn-info btn-small" %></span>
+	<span class="pullright"><%= link_to 'New Point', root_path, class: "btn btn-info btn-small fixbut" %></span>
 	<div class="mobile-text1">
 		<% if @points %>
 			<% @points.each do |point| %>

@@ -49,13 +49,13 @@ var deskStyle = [
   },{
     "featureType": "road.arterial",
     "stylers": [
-      { "weight": 0.8 },
-      { "lightness": 20 }
+      { "weight": 1.4 },
+      { "lightness": 30 }
     ]
   },{
     "featureType": "road.local",
     "stylers": [
-      { "weight": 1.6 },
+      { "weight": 1.4 },
       { "lightness": -18 }
     ]
   },{
