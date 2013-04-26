@@ -1,3 +1,17 @@
+<!-- Edit Point -->
+
+
+<% if mobile_device? %>    <!-- Mobile -->
+	
+	<div class="mobile-container">
+		<h4>Edit Location</h4>
+	    <%= render 'form' %>
+	    <br />
+	</div>
+
+
+<% else %>
+
 <h1>Editing point</h1>
 <div class="row-fluid">
 	<div class="span9 offset1">
@@ -7,3 +21,5 @@
 		<%= link_to 'Back', points_path %>
 	</div>
 <div>
+
+<% end %>

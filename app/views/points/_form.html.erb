@@ -1,4 +1,4 @@
-<h4>New Location</h4>
+
 <%= simple_form_for(@point) do |f| %>
   <% if @point.errors.any? %>
     <div id="error_explanation">
@@ -22,7 +22,7 @@
                     collection: current_user.groups,
                     as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
 
- 
+ <div class="form-button">
   <%= f.button :submit, class: "btn btn-info" %>
-  
+ </div>
 <% end %>

@@ -1,7 +1,7 @@
 class PointsController < ApplicationController
   
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update]
-
+  before_filter :authorize, only: [:edit, :update]
   # GET /points
   # GET /points.json
  
@@ -78,8 +78,10 @@ class PointsController < ApplicationController
   # GET /points/1/edit
   def edit
     @point = Point.find(params[:id])
-  end
 
+
+  end
+  
 
   # POST /points
   # POST /points.json
@@ -140,4 +142,18 @@ class PointsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+private
+  def authorize()
+
+      s = Point.find(params[:id])
+
+      if current_user.id == s.user.id
+        
+      else
+          flash[:error] = "You must be owner to edit"
+          redirect_to(:back)
+      end
+     end
 end
+
