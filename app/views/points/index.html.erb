@@ -6,9 +6,11 @@
 
     <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",   
                               "detect_location" => true, 
+                              "center_latitude" => 43.8,
+                              "center_longitude" => -80,
                               "center_on_user" => true, 
                               "auto_zoom" => false,
-                              "zoom" => 13,
+                              "zoom" => 14,
                               "class" => "gmaps4rails_mobilemap"},
                               "markers" => { "data" => @json,
                                               "options" => {"custom_infowindow_class" => "infobox"} }) %> <!-- style options in points.js --> 
@@ -25,12 +27,12 @@
     <div class="row-fluid">
         <div class="span8">
             <%= gmaps("map_options" => { :raw => "{styles: deskStyle}", 
-                                        "center_latitude" => 43.5,
+                                        "center_latitude" => 43.8,
                                         "center_longitude" => -80,
                                         "detect_location" => false, 
-                                        "center_on_user" => false, 
+                                        "center_on_user" => true, 
                                         "auto_adjust" => false,
-                                        "zoom" => 7},
+                                        "zoom" => 8},
                                         "markers" => { "data" => @json,
                                                        "options" => {"custom_infowindow_class" => "infobox"} }) %>  <!-- style options in points.js --> 
 

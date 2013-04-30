@@ -8,6 +8,10 @@
 		    <div><%= f.input :remember_me, as: :boolean %></div>
 		  <% end -%>
 
-		  <div><%= f.button :submit, "Sign in", class: "btn btn-info" %></div>
+		  <div>
+		  	<%= f.button :submit, "Sign in", class: "btn btn-info" %>&nbsp &nbsp &nbsp
+		  	<%= link_to "Not a user yet?  Sign up", new_registration_path(resource_name), class: "btn btn-success" %>
+
+		  </div>
 	</fieldset>
 <% end %>
