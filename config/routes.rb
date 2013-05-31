@@ -1,4 +1,6 @@
 WizzmapV6::Application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   get "groups/index"
 
   get "profiles/show"

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, 
-  				  :profile_name	
+  				  :profile_name, :role
   # attr_accessible :title, :body
 
   validates :profile_name, presence: true,
@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 
   has_many :points
   has_many :groups
+
+  ROLES = %w[admin author banned]
   
   def total_points
   	# not sure???

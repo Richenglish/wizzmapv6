@@ -10,6 +10,9 @@ gem 'gmaps4rails'
 gem 'devise'
 gem 'simple_form'
 
+gem 'rails_admin'
+gem 'cancan'
+
 group :development, :test do
 	gem 'sqlite3'
 end
