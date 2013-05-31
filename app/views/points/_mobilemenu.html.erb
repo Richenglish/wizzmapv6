@@ -84,9 +84,18 @@
             Gmaps.map.callback = function() {
                 google.maps.event.addListener(Gmaps.map.serviceObject, 'center_changed', function() {
                     centerCall();
-                    });
-                
-            };
+                    }); 
+                console.log("1");
+                Gmaps.map.addMarkers({Lat: 43.6659304,
+                                        Lng: -79.4264023, 
+                                        rich_marker: null, 
+                                        marker_picture: "/images/tornado-2.png"
+                       });
+                console.log("2");
+            }; 
+            
+
+
 
       
              <%= render 'points/infoboxscript' %>

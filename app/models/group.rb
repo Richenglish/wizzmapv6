@@ -6,5 +6,5 @@ class Group < ActiveRecord::Base
 
     def to_label
     "#{group_name}"
-  end
+  	end
 end
