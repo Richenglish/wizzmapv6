@@ -22,10 +22,8 @@
 
 <% else %>  <!-- Desktop -->
 
-<br />
 
-    <div class="row-fluid">
-        <div class="span8">
+    <div class="m-map">
             <%= gmaps("map_options" => { :raw => "{styles: deskStyle}", 
                                         "center_latitude" => 43.8,
                                         "center_longitude" => -80,
@@ -36,34 +34,34 @@
                                         "markers" => { "data" => @json,
                                                        "options" => {"custom_infowindow_class" => "infobox"} }) %>  <!-- style options in points.js --> 
 
-        </div>
-
-        <div class="span4">
-            <h3>Search</h3>
-            <%= render 'searchform' %>
-             
-             <h3>Actions</h3>
-             Add Location [BUTTON] <br />
-             My Points [BUTTON] <br />
-
-             <br />
-             <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
-            <br />
-            <%= link_to 'List of Points for Debug', list_path, class: "btn btn-info" %>
-            <%= link_to 'List of Groups for Debug', groups_path, class: "btn btn-info" %>
-
-        
-             <div id="dataDisplay">
-                <h3>Data</h3>
-                - Shown on click -
-                <br />
-                i = <span id="iLabel"> </span>
-
-
-            </div>
-            
-        </div>
     </div>
+
+    <div class="m-side">
+        <h3>Search</h3>
+        <%= render 'searchform' %>
+         
+         <h3>Actions</h3>
+         Add Location [BUTTON] <br />
+         My Points [BUTTON] <br />
+
+         <br />
+         <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
+        <br />
+        <%= link_to 'List of Points for Debug', list_path, class: "btn btn-info" %>
+        <%= link_to 'List of Groups for Debug', groups_path, class: "btn btn-info" %>
+
+    
+         <div id="dataDisplay">
+            <h3>Data</h3>
+            - Shown on click -
+            <br />
+            i = <span id="iLabel"> </span>
+
+
+        </div>
+            
+    </div>
+    
 
    <%= render 'infoboxscript' %>
     

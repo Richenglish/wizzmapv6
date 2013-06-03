@@ -18,9 +18,23 @@ html{
 }
 
 body{
-	padding-top: 40px;
 	height: 100%;
 }
+
+.m-main {
+		margin: 10px auto 10px;
+		width: 98%;
+	}
+
+.m-map {
+		width: 75%;
+		float: left;
+	}
+
+.m-side {
+		width: 23%;
+		float: right;
+	}
 
 .pullright {
 	position: fixed;
@@ -85,3 +99,4 @@ body{
 }
 
 
+ *= require foundation_and_overrides

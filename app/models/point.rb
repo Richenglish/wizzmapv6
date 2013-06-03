@@ -18,7 +18,14 @@ class Point < ActiveRecord::Base
     find(:all, :conditions => ['name LIKE ? OR content LIKE ?', search_condition, search_condition])
   end
 
-
+#marker
+def gmaps4rails_marker_picture
+  {
+   "picture" => "/assets/icon1.png",
+   :width => 20,
+   :height => 20
+ }
+end
 
 
 

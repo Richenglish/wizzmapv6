@@ -1,0 +1,36 @@
+
+<nav class="top-bar">
+  <ul class="title-area">
+
+    <!-- Title Area -->
+    <li class="name">
+      <h1><%= link_to "Wizzmap", root_path %></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      
+      <li><a href="#">Main Item 1</a></li>
+      
+      <li><a href="#">Main Item 2</a></li>
+      
+      
+     
+    </ul>
+
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if user_signed_in? %>
+          <li><%= link_to current_user.profile_name, id_path(current_user.profile_name) %></li>
+          <% unless mobile_device? %><li><%= link_to "Log Out", logout_path %></li><% end %>
+        <% else %>
+          <li><%= link_to "Log In", login_path %></li>
+          <% unless mobile_device? %><li><%= link_to "Register", register_path %></li><% end %> 
+        <% end %>
+      
+    </ul>
+  </section>
+</nav>
