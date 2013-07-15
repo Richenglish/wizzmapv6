@@ -54,10 +54,10 @@
         <div id="menu_add" class="mobmen">
             <span id="add_lat"></span>
             <span id="add_long"></span> 
-            <div>
-                <%= link_to 'Add Location', new_point_path, class: "button expand" %>
-                <button class="toggle button expand" id="butt_clear2" type="button">Clear</button>
-            </div>
+            <ul class="button-group even-2">
+                <li><button class="toggle button secondary" id="butt_clear2" type="button">Clear</button></li>
+                <li><%= link_to 'Add Location', new_point_path, class: "button" %></li>
+            </ul>
         </div>
 
 <!-- sub Menu -->
