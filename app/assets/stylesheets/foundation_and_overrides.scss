@@ -115,7 +115,7 @@
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
-// $paragraph-font-weight: normal;
+$paragraph-font-weight: 200;
 // $paragraph-font-size: 1em;
 // $paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: emCalc(20px);
@@ -968,23 +968,23 @@
 //
 
 // Background color for the top bar
-$topbar-bg: #D5EFF1;
+$topbar-bg: #3694A1;
 
 // Height and margin
-$topbar-height: 55px;
+$topbar-height: 45px;
 $topbar-margin-bottom: emCalc(0px);
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;
 
 // Controlling the styles for the title in the top bar
-$topbar-title-weight: normal;
-$topbar-title-font-size: emCalc(19px);
+$topbar-title-weight: 100;
+$topbar-title-font-size: emCalc(24px);
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: #3B71B0;
+$topbar-link-color: #F8FFFF;
 $topbar-link-weight: normal;
-// $topbar-link-font-size: emCalc(13px);
+// $topbar-link-font-size: emCalc(12px);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;

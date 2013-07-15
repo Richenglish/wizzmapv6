@@ -4,14 +4,14 @@
 
         <!-- Action Call -->
         <div id="menu_action" class="mobmen">
-            <button class="toggle btn btn-block btn-info" id="butt_act" type="button">Actions</button>
+            <button class="toggle btn btn-info btn-block" id="butt_act" type="button">Actions</button>
         </div>
 
         <!-- Main Menu show? -->                  
         <div id="menu_main" class="mobmen btn-group btn-group-vertical"> 
 
 
-<!--  Edit or Add to Group -->
+            <!--  Edit or Add to Group -->
             <% if user_signed_in? %>
                 <% if @menu_point %>
                     <% if current_user.id == @point.user_id  %>
@@ -26,15 +26,15 @@
             <% end %>
 
 
- <!--  Add -->           
+            <!--  Add -->           
             <button class="toggle btn btn-block" id="butt_add" type="button">Create a New Location</button>
 
 
-<!--  Search -->
+            <!--  Search -->
             <!-- <button class="toggle btn btn-block" id="butt_search" type="button">Search</button> -->
 
             
-<!-- My Locations -->
+            <!-- My Locations -->
             <% if user_signed_in? %>
                 <%= link_to "My Locations and Profile", id_path(current_user.profile_name), class: "btn btn-block" %>
             <% end %>

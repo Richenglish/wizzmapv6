@@ -1,6 +1,10 @@
 WizzmapV6::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
+  match '/about', to: 'static_pages#about'
+  match '/help', to: 'static_pages#help'
+  match '/test', to: 'static_pages#test'
+
   get "groups/index"
 
   get "profiles/show"

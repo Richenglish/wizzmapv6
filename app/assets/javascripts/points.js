@@ -33,6 +33,7 @@ $(document).ready(function() {
 	
   });
 
+
 var deskStyle = [
   {
     "featureType": "road",
@@ -67,13 +68,14 @@ var deskStyle = [
     "featureType": "water",
     "stylers": [
       { "hue": "#00b2ff" },
-      { "lightness": 25 },
-      { "saturation": -43 }
+      { "saturation": 30 }
     ]
   },{
     "featureType": "poi.park",
     "stylers": [
-      { "lightness": -25 }
+      { "hue": "#5eff00" },
+      { "lightness": 17 },
+      { "saturation": 18 }
     ]
   },{
   }

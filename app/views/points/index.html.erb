@@ -13,7 +13,7 @@
                               "zoom" => 14,
                               "class" => "gmaps4rails_mobilemap"},
                               "markers" => { "data" => @json,
-                                              "options" => {"custom_infowindow_class" => "infobox"} }) %> <!-- style options in points.js --> 
+                                              "options" => {"custom_infowindow_class" => "infobox"} }) %> 
 
    
     <%= render 'mobilemenu' %>
@@ -32,33 +32,28 @@
                                         "auto_adjust" => false,
                                         "zoom" => 8},
                                         "markers" => { "data" => @json,
-                                                       "options" => {"custom_infowindow_class" => "infobox"} }) %>  <!-- style options in points.js --> 
+                                                       "options" => {"custom_infowindow_class" => "infobox"} }) %>  
 
     </div>
 
     <div class="m-side">
-        <h3>Search</h3>
-        <%= render 'searchform' %>
-         
-         <h3>Actions</h3>
-         Add Location [BUTTON] <br />
-         My Points [BUTTON] <br />
-
-         <br />
-         <%= link_to 'New Point', new_point_path, class: "btn btn-success" %>
+        
+        <%#= render 'searchform' %>
+        
         <br />
-        <%= link_to 'List of Points for Debug', list_path, class: "btn btn-info" %>
-        <%= link_to 'List of Groups for Debug', groups_path, class: "btn btn-info" %>
+        <p>Welcome to the beta version of WizzMap.
+        </p>
+        <h4 class="subheader">Actions</h4>
+        <p>Too add a new location to the map:
+        <%= link_to 'New Point', new_point_path %></p>
 
-    
-         <div id="dataDisplay">
-            <h3>Data</h3>
-            - Shown on click -
-            <br />
-            i = <span id="iLabel"> </span>
-
-
-        </div>
+        <p>Too create a group of collections:
+        <%= link_to 'New Group', new_group_path %></p>
+        
+        <p>If you need help or want to know how all of this works:
+        <%= link_to 'Instructions and Help', help_path %></p>
+        
+        
             
     </div>
     

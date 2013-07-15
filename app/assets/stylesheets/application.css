@@ -23,7 +23,7 @@ body{
 
 .m-main {
 		margin: 10px auto 10px;
-		width: 98%;
+		width: 100%;
 	}
 
 .m-map {
@@ -32,9 +32,13 @@ body{
 	}
 
 .m-side {
-		width: 23%;
+		width: 25%;
 		float: right;
+		padding-left: 10px;
+		padding-right: 10px;
+
 	}
+
 
 .pullright {
 	position: fixed;
@@ -46,6 +50,9 @@ body{
 }
 
 
+/*===============
+    Map Stuff
+===============*/
 
 #map label { width: auto; display:inline; }
 #map img { max-width: none; }
@@ -54,8 +61,11 @@ body{
 
 .infobox {
 	border: 1px solid black; 
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
 	margin-top: 8px; 
-	background: white; 
+	background: #E9FFFF; 
 	height: 225px;
 	bottom: 0px;
 }
@@ -65,8 +75,8 @@ body{
 }
 
 #info-title {
-	font-size: 2em;
-	font-weight: bold;
+	font-size: 1.5em;
+	font-weight: 200;
 }
 
 #info-content {
@@ -79,26 +89,17 @@ body{
 	text-align: right;
 }
 
-.pointlist-head {
-	font-size: 1.50em;
-	padding-bottom: 12px;
-}
-.pointlist-subhead {
-	font-size: 1.25em;
-	padding-bottom: 8px;
-	
-}
+/*=======================
+   Foundation Override
+=========================*/
 
-.pointlist-block {
-	margin-top: 10px;
-}
 
-.pointlist-title {
-	font-weight: bold;
-}
-.pointlist-content {
-	 
-}
+ .top-bar-section li a:not(.button):hover {
+        background: lightgrey !important; 
+ }
 
+ .top-bar {
+ 	
+ }
 
  *= require foundation_and_overrides
