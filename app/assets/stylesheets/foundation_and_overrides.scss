@@ -248,11 +248,11 @@ $paragraph-font-weight: 200;
 // $button-font-family: inherit;
 // $button-font-color: #fff;
 // $button-font-color-alt: #333;
-// $button-font-med: emCalc(16px);
+$button-font-med: emCalc(14px);
 // $button-font-tny: emCalc(11px);
 // $button-font-sml: emCalc(13px);
 // $button-font-lrg: emCalc(20px);
-// $button-font-weight: bold;
+$button-font-weight: normal;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
