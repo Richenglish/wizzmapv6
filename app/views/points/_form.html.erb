@@ -1,4 +1,4 @@
-
+<br />
 <%= simple_form_for(@point) do |f| %>
   <% if @point.errors.any? %>
     <div id="error_explanation">
@@ -13,6 +13,7 @@
   <% end %>
 
   <%= f.input :name, input_html: { class: 'input-large' } %>
+  Description
   <%= f.text_area :content, :rows => "15" %>
   <div class="hide">
   <%= f.input :lat, input_html: { class: 'input-xlarge' }  %>
@@ -21,8 +22,8 @@
   <%= f.association :groups, 
                     collection: current_user.groups,
                     as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
-
+  <br />
  <div class="form-button">
-  <%= f.button :submit, class: "btn btn-info" %>
+  <%= f.button :submit, class: "button small" %>
  </div>
 <% end %>

@@ -12,14 +12,18 @@
 
 <% else %>
 
-<h1>Editing point</h1>
-<div class="row-fluid">
-	<div class="span9 offset1">
+<br />
+
+<div class="row">
+	<div class="large-5 columns">
+		<h3>Edit Point</h3>
+
 		<%= render 'form' %>
 
-		<%= link_to 'Show', @point %> |
-		<%= link_to 'Back', points_path %>
+		<%= link_to 'Cancel', @point %> 
+		
 	</div>
-<div>
+
+</div>
 
 <% end %>

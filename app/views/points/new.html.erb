@@ -26,19 +26,16 @@
 
 <% else %>       <!-- Desktop -->
 
-<br />
 
-
-<div class="row-fluid">
-	<div class="span8">
+    <div class="m-map">
 		<div>
 			<%= gmaps4rails(@json) %>
 		</div>
 	</div>
-	<div class="span4">
+	<div class="m-side">
 		<%= render 'form' %>
 	</div>
-</div>
+
 
 <% content_for :scripts do %>
 	<script type="text/javascript" charset="utf-8">
