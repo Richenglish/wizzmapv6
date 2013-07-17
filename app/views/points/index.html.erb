@@ -3,7 +3,9 @@
 <% if mobile_device? %>   <!-- Mobile -->
     
     <!-- Map Call -->
-
+    <div id="cross">
+      <%= image_tag 'cross.png' %>
+    </div>
     <%= gmaps("map_options" => { :raw => "{styles: deskStyle}",   
                               "detect_location" => true, 
                               "center_latitude" => 43.8,

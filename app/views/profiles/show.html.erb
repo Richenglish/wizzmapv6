@@ -4,9 +4,9 @@
 <% if mobile_device? %> <!-- Mobile -->
 
 <div class="mobile-container">
-	<div class="pointlist-head"><%= @user.profile_name %></div>
+	<h3 class="subheader"><%= @user.profile_name %></h3>
 	
-	<span class="pointlist-subhead">My Groups</span> 
+	My Groups 
 	<span class="pullright"><%= link_to 'New Collection', new_group_path, class: "btn btn-info btn-small fixbut" %></span>
 	<div class="mobile-text1">
 		<% if @groups %>
@@ -33,8 +33,7 @@
 	<div class="mobile-text1">
 	<%= link_to "Log Out", logout_path %><br />
 	<%= link_to "Edit Profile", edit_user_registration_path %><br />
-	<%= link_to 'New Point', new_point_path %> <br />
-	<%= link_to 'New Collection', new_group_path %> <br />
+	
 	</div>
 
 </div>
@@ -44,7 +43,7 @@
 
 
 
-<div class ="m-map">
+<div class="m-map">
 	
 	<%= gmaps4rails(@json) %>
 		

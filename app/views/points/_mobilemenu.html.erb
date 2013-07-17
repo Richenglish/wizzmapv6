@@ -26,17 +26,17 @@
             <% end %>
 
 
-            <!--  Add -->           
-            <button class="toggle button expand" id="butt_add" type="button">Create a New Location</button>
-
-
             <!--  Search -->
             <!-- <button class="toggle btn btn-block" id="butt_search" type="button">Search</button> -->
 
             
             <!-- My Locations -->
             <% if user_signed_in? %>
+                <button class="toggle button expand" id="butt_add" type="button">Create a New Location</button>
                 <%= link_to "My Locations and Profile", id_path(current_user.profile_name), class: "button expand" %>
+            
+            <% else %>
+                <%= link_to "Log In", login_path, class: "button expand" %>
             <% end %>
 
 <!--  Center on Me -->           
