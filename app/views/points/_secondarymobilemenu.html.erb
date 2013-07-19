@@ -1,0 +1,65 @@
+<!-- Secondary Partial for Mobile menu -->
+
+<div class="menu_mobile">
+
+        <!-- Action Call -->
+        <div id="menu_action" class="mobmen">
+            <button class="toggle button expand" id="butt_act" type="button">Actions</button>
+        </div>
+
+        <!-- Main Menu show? -->                  
+        <div id="menu_main" class="mobmen"> 
+
+
+            <!--  Edit or Add to Group -->
+            <% if user_signed_in? %>
+                <% if @menu_point %>
+                    <% if current_user.id == @point.user_id  %>
+                        <%= link_to "Edit this Location", edit_point_path(@point), class: "button expand" %>
+                    <% else %>
+                        <%= link_to "Add This to a Group", root_path, class: "button expand" %>
+                    <% end %>
+                <% end %>
+                <% if @menu_group && current_user.id == @group.user_id %>
+                    <%= link_to "Edit this Group", edit_group_path(@group), class: "button expand" %>
+                <% end %>
+            <% end %>
+
+
+           
+            <!-- My Locations -->
+            <% if user_signed_in? %>
+                <button class="toggle button expand" id="butt_add" type="button">Create a New Location</button>
+                <%= link_to "My Locations and Profile", id_path(current_user.profile_name), class: "button expand" %>
+            
+            <% else %>
+                <%= link_to "Log In", login_path, class: "button expand" %>
+            <% end %>
+
+<!--  Center on Me -->           
+            
+             <%= link_to 'Center on Me', root_path, class: "button expand" %>
+
+
+<!-- Collapse -->
+            <button class="toggle button expand" id="butt_clear" type="button">Collapse</button>
+        </div>
+
+
+<!-- sub Menu -->
+<!-- Add Location -->
+        <div id="menu_add" class="mobmen">
+            <span id="add_lat"></span>
+            <span id="add_long"></span> 
+            <ul class="button-group even-2">
+                <li><button class="toggle button secondary" id="butt_clear2" type="button">Clear</button></li>
+                <li><%= link_to 'Add Location', new_point_path, class: "button" %></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+        
+  

@@ -60,12 +60,12 @@ body{
 
 
 .infobox {
-	border: 1px solid black; 
+	border: 2px solid #3E4147; 
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	margin-top: 8px; 
-	background: #E9FFFF; 
+	background: #CED2D4; 
 	height: 225px;
 	bottom: 0px;
 }
