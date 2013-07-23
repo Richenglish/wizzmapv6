@@ -29,11 +29,24 @@
 
     <div class="m-map">
 		<div>
-			<%= gmaps4rails(@json) %>
+			<%#= gmaps4rails(@json) %>
+             <%= gmaps("map_options" => { 
+                                "detect_location" => true, 
+                                "center_on_user" => true,
+                                "center_latitude" => 43.8,
+                                "center_longitude" => -80, 
+                                "zoom" => 7},
+                                "markers" => { "data" => @json }) %>
 		</div>
 	</div>
 	<div class="m-side">
+        <br />
+        <h3 class="subheader">Add a location</h3>
 		<%= render 'form' %>
+        <br />
+        <br />
+        <b>Instructions</b><br />
+        Click on the map for the location and then populate the form.
 	</div>
 
 
@@ -68,7 +81,7 @@
             markersArray.push(marker);
             // Set and open infowindow
             var infowindow = new google.maps.InfoWindow({
-                content: '<div class="popup"><h2>Awesome!</h2><p>Drag me and adjust the zoom level.</p>'
+                content: '<div class="popup"><h3>Great!</h3><p>Now drag me and adjust the zoom level.<br /> Populate the form to add content to the location.</p>'
             });
             infowindow.open(Gmaps.map.serviceObject,marker);
             // Listen to drag & drop

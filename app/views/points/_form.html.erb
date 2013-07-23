@@ -19,10 +19,11 @@
   <%= f.input :lat, input_html: { class: 'input-xlarge' }  %>
   <%= f.input :long, input_html: { class: 'input-xlarge' }  %>
   </div>
+  <br />
   <%= f.association :groups, 
                     collection: current_user.groups,
                     as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
-  <br />
+  <br /><br />
  <div class="form-button">
   <%= f.button :submit, class: "button small" %>
  </div>

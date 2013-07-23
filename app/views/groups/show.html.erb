@@ -40,7 +40,11 @@
 		<p>
 			<%= @group.group_description %>
 		</p>
+		<%= link_to 'Edit this Group', edit_group_path(@group), class: "button small" %> 
+		
 		<br />
+		<br />
+		
 		<h3 class="subheader">Points </h3>
 		<% if @points %>
 			<% @points.each do |point| %>
@@ -50,9 +54,11 @@
 			<% end %>
 		<% end %>
 
-		<br />
+		<%= link_to 'New Point', new_point_path, class: "button small" %></p>
 
-    	<%= link_to 'Edit this Group', edit_group_path(@group), class: "button small" %> 
+		
+
+    	
 
 
 		
