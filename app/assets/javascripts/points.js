@@ -13,6 +13,7 @@ $(document).ready(function() {
 	$('#butt_add').click(function(){
 	    $('#menu_main').toggle();
 	    $('#menu_add').toggle();
+      $('#cross').toggle();
 	});
 
 	$('#butt_search').click(function(){
@@ -27,6 +28,7 @@ $(document).ready(function() {
 
 	$('#butt_clear2').click(function(){
 	    $('#menu_add').toggle();
+      $('#cross').toggle();
 	     
 	});
 
