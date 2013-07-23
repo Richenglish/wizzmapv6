@@ -50,6 +50,8 @@ body{
 }
 
 
+
+
 /*===============
     Map Stuff
 ===============*/
@@ -65,7 +67,7 @@ body{
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	margin-top: 8px; 
-	background: #CED2D4; 
+	background: #F1F4FA; 
 	height: 225px;
 	bottom: 0px;
 }

@@ -45,7 +45,12 @@
 
 <div class="m-map">
 	
-	<%= gmaps4rails(@json) %>
+	<%= gmaps("map_options" => {  :raw => "{styles: deskStyle}",
+                          "detect_location" => true, 
+                          "center_on_user" => false, 
+                          "auto_zoom" => false},
+                          "markers" => { "data" => @json,
+                                          "options" => {"custom_infowindow_class" => "infobox"} }) %>
 		
 </div>
 
