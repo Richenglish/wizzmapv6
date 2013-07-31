@@ -49,7 +49,9 @@ class PointsController < ApplicationController
 
     @menu_point = true
 
-    @json = @point.to_gmaps4rails
+    @json = @point.to_gmaps4rails do |point, marker|
+      marker.infowindow render_to_string(:partial => "/points/infowindow", :locals => { :point => point})
+    end
 
     respond_to do |format|
       format.html # show.html.erb

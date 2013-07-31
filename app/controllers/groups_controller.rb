@@ -36,17 +36,17 @@ class GroupsController < ApplicationController
   end
 
 
+  
+
   def show
-  	@group = Group.find(params[:id])
+    @group = Group.find(params[:id])
     @points = @group.points.all
 
     @menu_group = true
 
-    @json = @group.points.all.to_gmaps4rails
-  	respond_to do |format|
-  		format.html
-  		format.json { render json: @points}
-  	end
+    @json = @group.points.all.to_gmaps4rails do |point, marker|
+      marker.infowindow render_to_string(:partial => "/points/infowindow", :locals => { :point => point})
+    end
   end
 
   def edit

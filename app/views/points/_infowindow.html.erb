@@ -11,7 +11,7 @@
     <div id="info-menu">
     	<% if user_signed_in? %>
     		<% if current_user.id == point.user_id %>
-    			<%= link_to ' Edit ', edit_point_path(point), class: "btn btn-info" %>
+    			<%= link_to ' Edit ', edit_point_path(point), class: "button small" %>
     		
     		<% end %>
     	<% end %>

@@ -22,8 +22,8 @@ class Point < ActiveRecord::Base
 def gmaps4rails_marker_picture
   {
    "picture" => "/assets/post.png",
-   :width => 60,
-   :height => 60
+   :width => 48,
+   :height => 42
  }
 end
 

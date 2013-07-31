@@ -28,7 +28,15 @@
                               "auto_zoom" => false},
                               "markers" => { "data" => @json,
                                               "options" => {"custom_infowindow_class" => "infobox"} }) %>  
-
+        <%#= gmaps("map_options" => { :raw => "{styles: deskStyle}", 
+                                        "center_latitude" => 43.8,
+                                        "center_longitude" => -80,
+                                        "detect_location" => false, 
+                                        "center_on_user" => true, 
+                                        "auto_adjust" => false,
+                                        "zoom" => 8},
+                                        "markers" => { "data" => @json,
+                                                       "options" => {"custom_infowindow_class" => "infobox"} }) %>  
 	</div>
 
 	<div class="m-side">
@@ -57,14 +65,14 @@
 		<%= link_to 'New Point', new_point_path, class: "button small" %></p>
 
 		
-
-    	
-
-
-		
 	</div>
 	
 	
 	<%= render 'points/infoboxscript' %>
 
+
+
 <% end %>
+
+
+
