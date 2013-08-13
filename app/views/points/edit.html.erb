@@ -6,7 +6,9 @@
 	<div class="mobile-container">
 		<h4>Edit Location</h4>
 	    <%= render 'form' %>
-	    <br />
+	    <hr>
+		You can also delete the point if needed.<br/><br />
+		<%= link_to 'Delete Point', @point, class: "button alert small" %> 
 	</div>
 
 
@@ -19,8 +21,12 @@
 		<h3>Edit Point</h3>
 
 		<%= render 'form' %>
-
-		<%= link_to 'Cancel', @point %> 
+		<hr>
+		You can also delete the point if needed.<br/><br />
+		
+		<%= link_to 'Delete Point', @point, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button small alert' %>
+		
+		
 		
 	</div>
 

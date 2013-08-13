@@ -25,6 +25,7 @@
                     as: :check_boxes, input_html: { class: 'input-xlarge' }  %>
   <br /><br />
  <div class="form-button">
-  <%= f.button :submit, class: "button small" %>
+  <%= f.button :submit, class: "button small" %> <br/>
+  or &nbsp <%= link_to 'Cancel', @point %> 
  </div>
 <% end %>
