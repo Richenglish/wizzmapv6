@@ -6,6 +6,10 @@
 	<div class="mobile-container">
 		<h3> Edit Group </h3>
 		<%= render 'groupform' %>
+		<hr>
+		You can also delete the group if needed.<br/><br />
+		<%= link_to 'Delete Group', @group, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button small alert' %>
+		
 	</div>
 
 
@@ -20,13 +24,14 @@
 
 			<%= render 'groupform' %>
 
-			<%= link_to 'Cancel', @group %> 
+			<hr>
+			You can also delete the group if needed.<br/><br />
+			<%= link_to 'Delete Group', @group, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button small alert' %>
+		
 			
 		</div>
 		
-		<div class="large-7 columns">
-		</div>
-
+		
 
 	</div>
 
