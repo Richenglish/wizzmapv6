@@ -1,11 +1,11 @@
 <!-- Sign In Form -->
 
 <% if mobile_device? %>    <!-- Mobile -->
+	<div class="mobile-container">
+		<%= render "devise/shared/login" %>
 
-	<%= render "devise/shared/login" %>
-
-	<%= render "devise/shared/links" %>
-
+		<%= render "devise/shared/links" %>
+	</div>
 
 
 <% else %>                 <!-- Desktop -->

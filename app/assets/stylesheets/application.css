@@ -29,6 +29,7 @@ body{
 .m-map {
 		width: 75%;
 		float: left;
+		border-right: 1px solid lightgrey;
 	}
 
 .m-side {
